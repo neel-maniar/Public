@@ -10,8 +10,6 @@ backgroundColour=(255,255,255) # White
 display_height=600 # Can tweak according to your screen size
 display_width=display_height*2
 
-# test commit
-
 # Number of "nodes"
 height=150 # 150
 width=height*2
