@@ -23,15 +23,17 @@ for line in listOfFiles:
     match = re.search('(\d+)(?=\s*\.spk\.txt\.bz2)', line)
     if match:
         xLabel.append(int(match.group(1)))
-# channels=[[10],[25],[26],[49],[50],[51],[i for i in range(60)]]
+channels=[[10],[25],[26],[49],[50],[51],[i for i in range(60)]]
 expMatrix=[]
 varMatrix=[]
 LambdaMatrix=[]
+numDataMatrix=[]
 ## Find intervals
 for j in channels:
     expList=[]
     LambdaList=[]
     varList=[]
+    numDataList=[]
     for URL in listOfFiles[0:div]:
         ## Import Data from URL
         response = requests.get(URL)
@@ -50,19 +52,21 @@ for j in channels:
         if len(timeIntervals)>0:
             ## Find C_v:
             n=len(timeIntervals)
-            exp=statistics.mean(timeIntervals)
-            Lambda=1/exp
-            var=Lambda**2*(n**2)/((n-1)**2*(n-2))
-            expList.append(exp)
-            LambdaList.append(Lambda)
-            varList.append(var)
-    expMatrix.append(expList)
-    LambdaMatrix.append(LambdaList)
-    varMatrix.append(varList)
+            # exp=statistics.mean(timeIntervals)
+            # Lambda=1/exp
+            # var=Lambda**2*(n**2)/((n-1)**2*(n-2))
+            # expList.append(exp)
+            # LambdaList.append(Lambda)
+            # varList.append(var)
+            numDataList.append(n)
+    numDataMatrix.append(numDataList)
+    # expMatrix.append(expList)
+    # LambdaMatrix.append(LambdaList)
+    # varMatrix.append(varList)
 
-print(expMatrix)
-print("\n")
-print(LambdaMatrix)
-print("\n")
-print(varMatrix)
+# print(expMatrix)
+# print("\n")
+# print(LambdaMatrix)
+# print("\n")
+# print(varMatrix)
 print("Process finished --- %s seconds ---" % (time() - start_time))
