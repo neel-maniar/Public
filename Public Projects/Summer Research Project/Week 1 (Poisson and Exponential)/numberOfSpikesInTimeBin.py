@@ -40,7 +40,7 @@ data = bz_file.read().decode('ascii')
 dataList = [[float(line.split()[0]),int(line.split()[1])] for line in data.splitlines()]
 # channels=[[10],[25],[26],[49],[50],[51],[i for i in range(60)]]
 # channels=[[10],[25],[26],[49],[50],[51]]
-channels=[i for i in range(60)]
+channels=[[i for i in range(60)]]
 for channel in channels:
     ## Find intervals
     timeListSpecificChannel=[row[0] for row in dataList if row[1] in channel]
