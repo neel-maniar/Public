@@ -2,9 +2,7 @@ import re
 import bz2
 import os
 import requests
-import numpy as np
 import matplotlib.pyplot as plt
-import statistics
 from time import time
 from collections import Counter
 start_time = time()
@@ -40,7 +38,8 @@ data = bz_file.read().decode('ascii')
 dataList = [[float(line.split()[0]),int(line.split()[1])] for line in data.splitlines()]
 # channels=[[10],[25],[26],[49],[50],[51],[i for i in range(60)]]
 # channels=[[10],[25],[26],[49],[50],[51]]
-channels=[[i for i in range(60)]]
+channels=[[i] for i in range(60)]
+cvMatrix=[]
 for channel in channels:
     ## Find intervals
     timeListSpecificChannel=[row[0] for row in dataList if row[1] in channel]
@@ -66,8 +65,8 @@ for channel in channels:
         # plt.title("Number of spikes in time bins of size "+str(timeInterval)+" in all channels, channel 1-3, div 4")
         # # plt.savefig('C:/Users/Neel/OneDrive/Documents/Summer Research Project/Figures/BarChart'+str(timeInterval)+'.eps', format='eps')
         # plt.cla()
-    print(cvList)
     # Add to text file
+    cvMatrix.append(cvList)
     path=dirname+"/cvList.txt"
     text_file = open(path, "a")
     text_file.write(str(cvList))
@@ -77,3 +76,4 @@ for channel in channels:
 
 #close file
 print("Process finished --- %s seconds ---" % (time() - start_time))
+print(cvMatrix)

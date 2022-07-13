@@ -46,7 +46,7 @@ for i in range(len(platingList)):
         bz_file = bz2.BZ2File(newPath)
         data = bz_file.read().decode('ascii')
         dataList = [[float(line.split()[0]),int(line.split()[1])] for line in data.splitlines()]
-        for i in range(1,61):
+        for i in range(60):
             channels=[i]
             ## Find intervals
             timeListSpecificChannel=[row[0] for row in dataList if row[1] in channels]
@@ -103,7 +103,7 @@ for i in range(len(platingList)):
     ax.text(0.05, 0.95, textstr, transform=ax.transAxes, fontsize=10,
             verticalalignment='top', bbox=props)
 
-    plt.savefig('C:/Users/Neel/OneDrive/Documents/Summer Research Project/Figures/BoxplotOmitted'+str(plating)+str(culture)+'.eps', format='eps')
+    # plt.savefig('C:/Users/Neel/OneDrive/Documents/Summer Research Project/Figures/BoxplotOmitted'+str(plating)+str(culture)+'.eps', format='eps')
 
 print("Process finished --- %s seconds ---" % (time() - start_time))
 plt.show()
