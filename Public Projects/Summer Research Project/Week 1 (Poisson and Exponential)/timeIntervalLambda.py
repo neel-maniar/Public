@@ -5,8 +5,9 @@ import requests
 import numpy as np
 import matplotlib.pyplot as plt
 import statistics
-from timeit import default_timer as timer
-start = timer()
+from time import time
+start_time = time()
+
 plating=1
 culture=3
 ## List of URLs for a particular day
@@ -22,44 +23,46 @@ for line in listOfFiles:
     match = re.search('(\d+)(?=\s*\.spk\.txt\.bz2)', line)
     if match:
         xLabel.append(int(match.group(1)))
-expList=[]
-LambdaList=[]
-VarList=[]
-for URL in listOfFiles[0:div]:
-    ## Import Data from URL
-    response = requests.get(URL)
-    dirname = os.path.dirname(__file__)
-    path = dirname+"\\testbz2"
-    newPath = path.replace(os.sep, '/')
-    open(newPath, "wb").write(response.content)
+# channels=[[10],[25],[26],[49],[50],[51],[i for i in range(60)]]
+expMatrix=[]
+varMatrix=[]
+LambdaMatrix=[]
+## Find intervals
+for j in channels:
+    expList=[]
+    LambdaList=[]
+    varList=[]
+    for URL in listOfFiles[0:div]:
+        ## Import Data from URL
+        response = requests.get(URL)
+        dirname = os.path.dirname(__file__)
+        path = dirname+"\\testbz2"
+        newPath = path.replace(os.sep, '/')
+        open(newPath, "wb").write(response.content)
 
-    ## Process data by reading it off as a string and converting to list
-    bz_file = bz2.BZ2File(newPath)
-    data = bz_file.read().decode('ascii')
-    dataList = [[float(line.split()[0]),int(line.split()[1])] for line in data.splitlines()]
-    # channels=[i for i in range(60)]
-    # 25,49,10,14
-    channels=[25]
-    ## Find intervals
-    timeListSpecificChannel=[row[0] for row in dataList if row[1] in channels]
-    timeIntervals=np.diff(timeListSpecificChannel)
-    if len(timeIntervals)>0:
-        # print("Maximum time between spikes:" ,max(timeIntervals))
-        # print("Minimum time between spikes:", min(timeIntervals))
+        ## Process data by reading it off as a string and converting to list
+        bz_file = bz2.BZ2File(newPath)
+        data = bz_file.read().decode('ascii')
+        dataList = [[float(line.split()[0]),int(line.split()[1])] for line in data.splitlines()]
+        # 10,25,26,49,50,51,All
+        timeListSpecificChannel=[row[0] for row in dataList if row[1] in j]
+        timeIntervals=np.diff(timeListSpecificChannel)
+        if len(timeIntervals)>0:
+            ## Find C_v:
+            n=len(timeIntervals)
+            exp=statistics.mean(timeIntervals)
+            Lambda=1/exp
+            var=Lambda**2*(n**2)/((n-1)**2*(n-2))
+            expList.append(exp)
+            LambdaList.append(Lambda)
+            varList.append(var)
+    expMatrix.append(expList)
+    LambdaMatrix.append(LambdaList)
+    varMatrix.append(varList)
 
-        ## Plot histogram
-        # plt.hist(timeIntervals, bins = 100) 
-        # plt.show()
-
-        ## Find C_v:
-        n=len(timeIntervals)
-        exp=statistics.mean(timeIntervals)
-        Lambda=1/exp
-        Var=Lambda**2*(n**2)/((n-1)**2*(n-2))
-        expList.append(exp)
-        LambdaList.append(Lambda)
-        VarList.append(Var)
-
-print(expList)
-print(LambdaList)
-print(VarList)
+print(expMatrix)
+print("\n")
+print(LambdaMatrix)
+print("\n")
+print(varMatrix)
+print("Process finished --- %s seconds ---" % (time() - start_time))
