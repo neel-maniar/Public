@@ -2,11 +2,14 @@ def linRegress(x,y):
     if len(x)!=len(y):
         return("ERROR - Lists must be of the same length")
     sumxsquared=sum(i*i for i in x)
+    sumysquared=sum(i*i for i in y)
     sumx=sum(x)
     sumy=sum(y)
     n=len(x)
     sumxy=sum(x[i]*y[i] for i in range(n))
-    denominator=(n*sumxsquared-sumx**2)
-    intercept=(sumxsquared*sumy-sumx*sumxy)/denominator
-    gradient=(-sumx*sumy+n*sumxy)/denominator
-    return(intercept,gradient)
+    denominatorx=(n*sumxsquared-sumx**2)
+    denominatory=(n*sumysquared-sumy**2)
+    intercept=(sumxsquared*sumy-sumx*sumxy)/denominatorx
+    gradient=(n*sumxy-sumx*sumy)/denominatorx
+    r=(n*sumxy-sumx*sumy)/(denominatorx*denominatory)**0.5
+    return(intercept,gradient,r)
