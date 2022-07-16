@@ -5,6 +5,7 @@ import requests
 import matplotlib.pyplot as plt
 from time import time
 from collections import Counter
+import numpy
 
 # Measure how long the program takes to run
 start_time = time()
@@ -13,7 +14,7 @@ start_time = time()
 plating=1
 culture=3
 div=25
-channels=[[i] for i in range(5)] # Which channels do we want to monitor?
+channels=[[i] for i in range(60)] # Which channels do we want to monitor?
 
 # Which values of delta do we want to try?
 timeIntervalList=[0.01,0.05,0.1,0.2,0.5,1,2,3,4,5,6,7,8,10,20,50,100,200,300,500,1000]
@@ -66,35 +67,28 @@ dataList = [[float(line.split()[0]),int(line.split()[1])] for line in data.split
 cvMatrix=[]
 cvList=[]
 for channel in channels:
-    ## Find intervals
-    timeListSpecificChannel=[row[0] for row in dataList if row[1] in channel]
-    if len(timeListSpecificChannel)>0:
+    timeListSpecificChannel=[row[0] for row in dataList if row[1] in channel] # Isolate items in the time series which we care about.
+    if len(timeListSpecificChannel)>1:
         for timeInterval in timeIntervalList:
-            timeListFloored=[i//timeInterval for i in timeListSpecificChannel]
-            most_common,num_most_common = Counter(timeListFloored).most_common(1)[0] # 4, 6 times
-            frequencies=[0 for i in range(num_most_common+1)]
-            numOccurences=[i for i in range(num_most_common+1)]
+            timeListFloored=[i//timeInterval for i in timeListSpecificChannel] # Calculate the bin which the spikes fall in
+            most_common,num_most_common = Counter(timeListFloored).most_common(1)[0] # Find the highest number of spikes in a given bin 
+            frequencies=[0 for i in range(num_most_common+1)] # frequencies[i]=Number of times something a bin had "i" many spikes in it.
+            numOccurences=[i for i in range(num_most_common+1)] # x-axis for the graph
             maxInTimeList=int(timeListFloored[-1])
-            frequencyTable=[[i,timeListFloored.count(i)] for i in range(maxInTimeList+1)]
+            frequencyTable=[[i,timeListFloored.count(i)] for i in range(maxInTimeList+1)] # Frequency table of number of spikes in time bin "i"
+            # Convert frequency table to frequencies list (losing information on which particular time bins had x number of spikes)
             for i in range(num_most_common+1):
                 for k in frequencyTable:
                     if k[1]==i:
                         frequencies[i]+=1
-            if sum(frequencies)>1:
-                exp=sum([index*value for index,value in enumerate(frequencies)])/sum(frequencies)
-                var=sum([value*(index-exp)**2 for index,value in enumerate(frequencies)])/(sum(frequencies)-1)
-                cv=(var/exp**2)**0.5
-                cvList.append(cv)
+            exp=sum([index*value for index,value in enumerate(frequencies)])/sum(frequencies)
+            var=sum([value*(index-exp)**2 for index,value in enumerate(frequencies)])/(sum(frequencies)-1)
+            cv=(var/exp**2)**0.5
+            cvList.append(cv)
             # barChart(numOccurences, frequencies, timeInterval)
-        # Add to text file
-        cvMatrix.append(cvList)
-        path=dirname+"/cvList.txt"
-        text_file = open(path, "a")
-        text_file.write(str(cvList))
-        text_file.write("\n")
-        text_file.close()
-        cvList=[]
-
-#close file
+    cvMatrix.append(cvList)
+cvMatrix = numpy.asarray(cvMatrix)
+dirname = os.path.dirname(__file__)
+path=dirname+"/cvLists/cvList"+str(plating)+str(culture)+str(div)+".csv"
+numpy.savetxt(path, cvMatrix, delimiter=",")
 print("Process finished --- %s seconds ---" % (time() - start_time))
-print(cvMatrix)
