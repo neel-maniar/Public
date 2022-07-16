@@ -13,7 +13,7 @@ start_time = time()
 # Parameters
 plating=1
 culture=3
-div=25
+div=13
 channels=[[i] for i in range(60)] # Which channels do we want to monitor?
 
 # Which values of delta do we want to try?
