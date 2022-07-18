@@ -1,9 +1,21 @@
 import matplotlib.pyplot as plt
 from math import log
+import csv
+import os
+import numpy as np
 
 plating=1
 culture=3
 div=25
+
+dirname = os.path.dirname(__file__)
+datafile=dirname+"/cvLists/cvList"+str(plating)+str(culture)+str(div)+".csv"
+
+CSVData = open(datafile)
+data = np.loadtxt(CSVData, delimiter=",")
+
+# data = list(csv.reader(open(datafile)))
+# print(data)
 
 timeIntervalList=[0.01,0.05,0.1,0.2,0.5,1,2,3,4,5,6,7,8,10,20,50,100,200,300,500,1000]
 
@@ -184,6 +196,23 @@ data1325=[
     [11.326084229932222, 10.382505506285236, 9.782067725700704, 8.465228861105452, 5.848178026730275, 4.252130274605768, 3.011948824146549, 2.4279209247093445, 2.044555627018087, 1.772793072519563, 1.5884584468919047, 1.4196814407712972, 1.2924047176951177, 1.074484923965686, 0.6460549233193065, 0.41934447687972287, 0.2949158983315234, 0.18801039295961958, 0.35102946585029976, 0.33146620089300594, 0.248853817660708]
 ]
 
+# def linRegress(x,y):
+#     if len(x)!=len(y):
+#         return("ERROR - Lists must be of the same length")
+#     sumxsquared=np.sum(x**2)
+#     sumysquared=np.sum(y**2)
+#     sumx=np.sum(x)
+#     sumy=np.sum(y)
+#     n=x.shape[0]
+#     sumxy=np.dot(x,y)
+#     print(sumx,sumy,sumxy,n)
+#     denominatorx=(n*sumxsquared-sumx**2)
+#     denominatory=(n*sumysquared-sumy**2)
+#     intercept=(sumxsquared*sumy-sumx*sumxy)/denominatorx
+#     gradient=(n*sumxy-sumx*sumy)/denominatorx
+#     r=(n*sumxy-sumx*sumy)/(denominatorx*denominatory)**0.5
+#     return(intercept,gradient,r)
+
 def linRegress(x,y):
     if len(x)!=len(y):
         return("ERROR - Lists must be of the same length")
@@ -197,14 +226,15 @@ def linRegress(x,y):
     denominatory=(n*sumysquared-sumy**2)
     intercept=(sumxsquared*sumy-sumx*sumxy)/denominatorx
     gradient=(n*sumxy-sumx*sumy)/denominatorx
-    r=(n*sumxy-sumx*sumy)/(denominatorx*denominatory)**0.5
+    r=(n*sumxy-sumx*sumy)/(denominatorx*denominatory)**0.5 
+    print((denominatorx*denominatory)**0.5)
     return(intercept,gradient,r)
 
-logTime=[log(i) for i in timeIntervalList] 
+logTime=[log(i) for i in timeIntervalList]
 gradientList=[]
 rList=[]
 
-for cvList in data13:
+for cvList in data:
     logcv=[log(i) for i in cvList]
     gradient=linRegress(logTime,logcv)[1]
     r=linRegress(logTime,logcv)[2]
@@ -214,6 +244,4 @@ for cvList in data13:
 plt.scatter(gradientList,rList)
 # plt.savefig('C:/Users/Neel/OneDrive/Documents/Summer Research Project/Figures/rVsSlopePlot'+str(plating)+str(culture)+str(div)+'.eps', format='eps')
 plt.show()
-
-
 
