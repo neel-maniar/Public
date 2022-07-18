@@ -12,7 +12,7 @@ start_time = time()
 
 # Parameters
 plating=1
-culture=3
+culture=1
 div=13
 channels=[[i] for i in range(60)] # Which channels do we want to monitor?
 
