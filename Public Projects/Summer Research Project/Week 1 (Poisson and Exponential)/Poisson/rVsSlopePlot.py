@@ -5,8 +5,8 @@ import os
 import numpy as np
 
 plating=1
-culture=3
-div=4
+culture=1
+div=13
 
 dirname = os.path.dirname(__file__)
 datafile=dirname+"/cvLists/cvList"+str(plating)+str(culture)+str(div)+".csv"
@@ -32,23 +32,23 @@ def linRegress(x,y):
     intercept=(sumxsquared*sumy-sumx*sumxy)/denominatorx
     gradient=(n*sumxy-sumx*sumy)/denominatorx
     r=(n*sumxy-sumx*sumy)/(denominatorx*denominatory)**0.5 
-    print((denominatorx*denominatory)**0.5)
     return(intercept,gradient,r)
 
 logTime=[log(i) for i in timeIntervalList]
 gradientList=[]
 rList=[]
-for i in data:
-    print(len(logTime),len(i))
-# for cvList in data:
-#     logcv=[log(i) for i in cvList]
-#     print(linRegress(logTime,logcv))
-#     gradient=linRegress(logTime,logcv)[1]
-#     r=linRegress(logTime,logcv)[2]
-#     gradientList.append(gradient)
-#     rList.append(r)
+for cvList in data:
+    logcv=[log(i) for i in cvList]
+    gradient=linRegress(logTime,logcv)[1]
+    r=linRegress(logTime,logcv)[2]
+    gradientList.append(gradient)
+    rList.append(r)
 
-# plt.scatter(gradientList,rList)
-# # plt.savefig('C:/Users/Neel/OneDrive/Documents/Summer Research Project/Figures/rVsSlopePlot'+str(plating)+str(culture)+str(div)+'.eps', format='eps')
-# plt.show()
+title=f"R-value vs gradient for log(C_v) vs log(Delta) in each channel of plating {plating}, culture {culture}, div {div}"
+plt.scatter(gradientList,rList)
+plt.title(title,wrap=True)
+plt.xlabel("testx")
+plt.ylabel("testy")
+plt.savefig(f'C:/Users/Neel/OneDrive/Documents/Summer Research Project/Figures/rVsSlopePlot{plating}{culture}{div}.eps', format='eps')
+plt.show()
 
