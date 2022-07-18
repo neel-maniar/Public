@@ -12,8 +12,8 @@ start_time = time()
 
 # Parameters
 plating=1
-culture=1
-div=13
+culture=3
+div=4
 channels=[[i] for i in range(60)] # Which channels do we want to monitor?
 
 # Which values of delta do we want to try?
@@ -40,7 +40,7 @@ def barChart(numOccurences, frequencies, timeInterval):
     plt.bar(numOccurences,frequencies)
     plt.xlabel("N_"+str(timeInterval))
     plt.ylabel("Frequency")
-    plt.title("Number of spikes in time bins of size "+str(timeInterval)+" in all channels, channel 1-3, div 4")
+    plt.title(f"Number of spikes in time bins of size {timeInterval} in all channels, plating {plating}, channel {channel}, div {div}",wrap=True)
     # plt.savefig('C:/Users/Neel/OneDrive/Documents/Summer Research Project/Figures/BarChart'+str(timeInterval)+'.eps', format='eps')
     plt.cla()
 
