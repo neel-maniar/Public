@@ -16,6 +16,7 @@ cultureList=[1,3,2,4,4,5,1,3]
 # platingList=[1,2,2,3,3,6,6]
 # cultureList=[3,2,4,4,5,1,3]
 # Change the title and the filename and the code!
+dataTreatment="None" # number (below which we want to ignore data. Write 1 if want to leave data untreated), or "Weighted"
 for i in range(len(platingList)):
     plating=platingList[i]
     culture=cultureList[i]
@@ -53,19 +54,18 @@ for i in range(len(platingList)):
             timeIntervals=np.diff(timeListSpecificChannel)
             lenTimeIntervals=len(timeIntervals)
 
-            # if lenTimeIntervals>1:
-            #     exp=statistics.mean(timeIntervals)
-            #     var=statistics.variance(timeIntervals)
-            #     cv=(var/exp**2)**0.5
-            #     cvList+=lenTimeIntervals*[cv]
-            
-            if len(timeIntervals)>1000: # Change 1000 to 1 if you don't want to filter out c_vs with fewer data points
-            ## Find C_v:
-                exp=statistics.mean(timeIntervals)
-                var=statistics.variance(timeIntervals)
-                cvList.append((var/exp**2)**0.5)
-            #     if i==49:
-            #         print(exp)
+            if dataTreatment=="Weighted":
+                if lenTimeIntervals>1:
+                    exp=statistics.mean(timeIntervals)
+                    var=statistics.variance(timeIntervals)
+                    cv=(var/exp**2)**0.5
+                    cvList+=lenTimeIntervals*[cv]
+            else:
+                if len(timeIntervals)>dataTreatment: # Change 1000 to 1 if you don't want to filter out c_vs with fewer data points
+                    exp=statistics.mean(timeIntervals)
+                    var=statistics.variance(timeIntervals)
+                    cvList.append((var/exp**2)**0.5)
+
         if len(cvList)>0:
             cvMatrix.append(cvList)
         else:
@@ -103,7 +103,14 @@ for i in range(len(platingList)):
     ax.text(0.05, 0.95, textstr, transform=ax.transAxes, fontsize=10,
             verticalalignment='top', bbox=props)
 
-    # plt.savefig('C:/Users/Neel/OneDrive/Documents/Summer Research Project/Figures/BoxplotOmitted'+str(plating)+str(culture)+'.eps', format='eps')
+    if dataTreatment==1:
+        treatmentText="Untreated"
+    elif isinstance(dataTreatment, int):
+        treatmentText="Omitted"+str(dataTreatment)
+    else:
+        treatmentText=dataTreatment
+
+    # plt.savefig('C:/Users/Neel/OneDrive/Documents/Summer Research Project/Figures/Boxplot'+treatmentText+str(plating)+str(culture)+'.eps', format='eps')
 
 print("Process finished --- %s seconds ---" % (time() - start_time))
 plt.show()
