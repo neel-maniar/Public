@@ -85,8 +85,10 @@ for channel in channels:
             var=sum([value*(index-exp)**2 for index,value in enumerate(frequencies)])/(sum(frequencies)-1)
             cv=(var/exp**2)**0.5
             cvList.append(cv)
+            print(timeInterval)
             # barChart(numOccurences, frequencies, timeInterval)
-    cvMatrix.append(cvList)
+        cvMatrix.append(cvList)
+        cvList=[]
 cvMatrix = numpy.asarray(cvMatrix)
 dirname = os.path.dirname(__file__)
 path=dirname+"/cvLists/cvList"+str(plating)+str(culture)+str(div)+".csv"
