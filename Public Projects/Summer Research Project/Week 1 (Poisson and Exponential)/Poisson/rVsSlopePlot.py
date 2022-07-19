@@ -4,9 +4,9 @@ import csv
 import os
 import numpy as np
 
-plating=1
-culture=1
-div=13
+plating=2
+culture=2
+div=25
 
 dirname = os.path.dirname(__file__)
 datafile=dirname+"/cvLists/cvList"+str(plating)+str(culture)+str(div)+".csv"
