@@ -11,9 +11,9 @@ import numpy
 start_time = time()
 
 # Parameters
-plating=1
-culture=1
-divList=[4,25]
+plating=2
+culture=4
+divList=[3,19,35]
 channels=[[i] for i in range(60)] # Which channels do we want to monitor?
 
 # Which values of delta do we want to try?
