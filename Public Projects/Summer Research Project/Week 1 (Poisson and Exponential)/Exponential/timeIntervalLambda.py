@@ -9,7 +9,7 @@ from time import time
 start_time = time()
 
 plating=6
-culture=1
+culture=3
 ## List of URLs for a particular day
 bigURL="https://neurodatasharing.bme.gatech.edu/development-data/html/wget/daily.spont.dense.text."+str(plating)+"."+str(culture)+".0.list"
 response = requests.get(bigURL)
