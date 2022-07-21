@@ -4,9 +4,9 @@ import csv
 import os
 import numpy as np
 
-plating=2
-culture=2
-div=25
+plating=1
+culture=1
+div=4
 
 dirname = os.path.dirname(__file__)
 datafile=dirname+"/cvLists/cvList"+str(plating)+str(culture)+str(div)+".csv"
@@ -47,8 +47,8 @@ for cvList in data:
 title=f"R-value vs gradient for log(C_v) vs log(Delta) in each channel of plating {plating}, culture {culture}, div {div}"
 plt.scatter(gradientList,rList)
 plt.title(title,wrap=True)
-plt.xlabel("testx")
-plt.ylabel("testy")
+plt.xlabel("Gradient")
+plt.ylabel("R-value")
 plt.savefig(f'C:/Users/Neel/OneDrive/Documents/Summer Research Project/Figures/rVsSlopePlot{plating}{culture}{div}.eps', format='eps')
 plt.show()
 

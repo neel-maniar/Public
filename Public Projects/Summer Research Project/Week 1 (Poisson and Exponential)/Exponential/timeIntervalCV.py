@@ -10,13 +10,10 @@ import math
 start_time = time()
 platingList=[1,1,2,2,3,3,6,6]
 cultureList=[1,3,2,4,4,5,1,3]
-# platingList=[6,6]
-# cultureList=[1,3]
-
-# platingList=[1,2,2,3,3,6,6]
-# cultureList=[3,2,4,4,5,1,3]
+platingList=[1]
+culture=[3]
 # Change the title and the filename and the code!
-dataTreatment="None" # number (below which we want to ignore data. Write 1 if want to leave data untreated), or "Weighted"
+dataTreatment=1 # number (below which we want to ignore data. Write 1 if want to leave data untreated), or "Weighted"
 for i in range(len(platingList)):
     plating=platingList[i]
     culture=cultureList[i]
@@ -25,10 +22,10 @@ for i in range(len(platingList)):
     bigURL="https://neurodatasharing.bme.gatech.edu/development-data/html/wget/daily.spont.dense.text."+str(plating)+"."+str(culture)+".0.list"
     response = requests.get(bigURL)
     dirname = os.path.dirname(__file__)
-    path = dirname+"/testfile"
+    path = dirname+"/URLfile"
     open(path, "wb").write(response.content)
     listOfFiles = [line.rstrip() for line in open(path)]
-    div=len(listOfFiles)
+    div=0
     xLabel=[]
     for line in listOfFiles:
         match = re.search('(\d+)(?=\s*\.spk\.txt\.bz2)', line)
@@ -71,6 +68,8 @@ for i in range(len(platingList)):
         else:
             print(URL)
         cvList=[]
+
+    print(f"{os.path.basename(__file__)} took ----- {time()-start_time} ----- seconds to run")
     ## Boxplots
     fig, ax = plt.subplots(figsize=(10, 6))
     # Creating two axes
@@ -78,9 +77,17 @@ for i in range(len(platingList)):
     fig.canvas.manager.set_window_title('Boxplot'+str(plating)+str(culture))
     bp = ax.boxplot(cvMatrix)
     ax.yaxis.grid(True, linestyle='-', which='major', color='lightgrey',alpha=0.5)
+
+    if dataTreatment==1:
+        titleText="untreated"
+    elif isinstance(dataTreatment, int):
+        titleText=f"omitting <{dataTreatment} datapoints"
+    else:
+        titleText="weighted"
+
     ax.set(
         axisbelow=True,  # Hide the grid behind plot objects
-        title='Boxplots of c_v of intervals between spikes in channels of Plating '+str(plating)+', Culture '+str(culture)+' vs time, omitting <1000 datapoints',
+        title=f'Boxplots of c_v of intervals between spikes in channels of Plating {plating}, Culture {culture} vs time, {titleText}',
         xlabel='Days In Vitro',
         ylabel='C_v of channels',
     )
@@ -112,5 +119,4 @@ for i in range(len(platingList)):
 
     # plt.savefig('C:/Users/Neel/OneDrive/Documents/Summer Research Project/Figures/Boxplot'+treatmentText+str(plating)+str(culture)+'.eps', format='eps')
 
-print("Process finished --- %s seconds ---" % (time() - start_time))
-plt.show()
+    # plt.show()

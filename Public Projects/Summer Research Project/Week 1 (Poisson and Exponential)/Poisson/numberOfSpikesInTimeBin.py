@@ -13,12 +13,11 @@ start_time = time()
 # Parameters
 plating=2
 culture=4
-divList=[4,14,35]
+divList=[3,19,35]
 channels=[[i] for i in range(60)] # Which channels do we want to monitor?
 
 # Which values of delta do we want to try?
 timeIntervalList=[0.01,0.05,0.1,0.2,0.5,1,2,3,4,5,6,7,8,10,20,50,100,200,300,500,1000]
-
 
 ## List of URLs for a particular day
 bigURL="https://neurodatasharing.bme.gatech.edu/development-data/html/wget/daily.spont.dense.text."+str(plating)+"."+str(culture)+".0.list"

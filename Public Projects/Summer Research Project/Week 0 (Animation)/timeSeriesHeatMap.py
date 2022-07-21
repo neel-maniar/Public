@@ -8,11 +8,14 @@ from timeit import default_timer as timer
 start = timer()
 
 ## Variables
-speed=10000 # the higher the number, the slower it is
+speed=100 # the higher the number, the slower it is
 flashDuration=400 # the higher the number, the slower it is
+plating=1
+culture=3
+div=4
 
 ## Import Data from URL
-URL = "https://neurodatasharing.bme.gatech.edu/development-data/simple-text/daily/spont/dense/1-1-7.spk.txt.bz2"
+URL = f"https://neurodatasharing.bme.gatech.edu/development-data/simple-text/daily/spont/dense/{plating}-{culture}-{div}.spk.txt.bz2"
 response = requests.get(URL)
 dirname = os.path.dirname(__file__)
 path = dirname+"\\testbz2"
@@ -50,15 +53,6 @@ def numToCoord(num):
     rows=[6, 7, 5, 4, 7, 6, 7, 5, 6, 6, 5, 5, 4, 4, 4, 3, 3, 3, 2, 2, 1, 1, 2, 0, 1, 0, 3, 2, 0, 1, 1, 0, 2, 3, 0, 1, 0, 2, 1, 1, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 6, 6, 5, 7, 6, 7, 4, 5, 7, 6, 0, 0, 7, 7, -1]
     cols=[3, 3, 3, 3, 2, 2, 1, 2, 1, 0, 1, 0, 2, 1, 0, 0, 1, 2, 0, 1, 0, 1, 2, 1, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 6, 5, 6, 7, 6, 7, 5, 6, 7, 7, 6, 5, 7, 6, 7, 6, 5, 6, 5, 5, 4, 4, 4, 4, 0, 7, 0, 7, -1]
     return([rows[ num ],cols[ num ]])
-def numToCoord(num):
-    if num<=6:
-        return([0,num])
-    elif num<=54:
-        row=1+(num-7)//8
-        col=(num-7)%8
-        return([row,col])
-    else:
-        return([7,num-54])
 
 ## Draw grid
 display.fill(white)
