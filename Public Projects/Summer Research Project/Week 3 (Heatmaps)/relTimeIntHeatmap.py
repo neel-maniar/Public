@@ -12,9 +12,9 @@ from matplotlib.patches import Rectangle
 start_time = time()
 
 # Parameters
-plating=6
-culture=3
-divList=[4,19,34]
+plating=2
+culture=2
+divList=[14]
 
 for div in divList:
     ## List of URLs for a particular day
@@ -52,28 +52,27 @@ for div in divList:
     bz_file = bz2.BZ2File(newPath)
     data = bz_file.read().decode('ascii')
     dataList = [[float(line.split()[0]),int(line.split()[1])] for line in data.splitlines()]
-    for masterChannel in range(60):
+    for masterChannel in [21]:
         print(f"{masterChannel}/59")
-        timeListMasterChannel=[row[0] for row in dataList if row[1] == masterChannel]
+        timeListMasterChannel=[[index,row[0]] for index,row in enumerate(dataList) if row[1] == masterChannel]
         timeIntervals=[[] for i in range(60)]
-        AppendedYet=[True for i in range(60)]
+        AppendedYet=[False for i in range(60)]
+        dontCheckChannel=[False for i in range(60)]
         currMasterTime=0
         prevMasterTime=0
-        for entry in dataList:
-            t=entry[0]
-            channel=entry[1]
-            if channel==masterChannel:
-                currMasterTime=t
-                AppendedYet=[False for i in range(60)]
-            if AppendedYet[channel]==False:
-                if channel!=masterChannel:
-                    timeIntervals[entry[1]].append(entry[0]-currMasterTime)
-                    AppendedYet[entry[1]]=True
-                else:
-                    if prevMasterTime!=0:
-                        timeIntervals[masterChannel].append(currMasterTime-prevMasterTime)
-                    prevMasterTime=currMasterTime
-
+        for index,masterTime in timeListMasterChannel:
+            for data in dataList[index+1:]:
+                t=data[0]
+                channel=data[1]
+                if dontCheckChannel[channel]==False and AppendedYet[channel]==False:
+                    timeIntervals[channel].append(t-masterTime)
+                    AppendedYet[channel]=True
+            for index,value in enumerate(AppendedYet):
+                if value==False:
+                    dontCheckChannel[index]=True
+            AppendedYet=[False for i in range(60)]
+            print(f"{index} out of {len(dataList)}")
+        
         def numToCoord(num):
             rows=[6, 7, 5, 4, 7, 6, 7, 5, 6, 6, 5, 5, 4, 4, 4, 3, 3, 3, 2, 2, 1, 1, 2, 0, 1, 0, 3, 2, 0, 1, 1, 0, 2, 3, 0, 1, 0, 2, 1, 1, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 6, 6, 5, 7, 6, 7, 4, 5, 7, 6, 0, 0, 7, 7, -1]
             cols=[3, 3, 3, 3, 2, 2, 1, 2, 1, 0, 1, 0, 2, 1, 0, 0, 1, 2, 0, 1, 0, 1, 2, 1, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 6, 5, 6, 7, 6, 7, 5, 6, 7, 7, 6, 5, 7, 6, 7, 6, 5, 6, 5, 5, 4, 4, 4, 4, 0, 7, 0, 7, -1]
@@ -105,48 +104,49 @@ for div in divList:
         position=(numToCoord(masterChannel)[1],numToCoord(masterChannel)[0])
         ax.add_patch(Rectangle(position, 1, 1, fill=False, edgecolor='blue', lw=3))
 
-        plt.savefig(f'C:/Users/Neel/OneDrive/Documents/Summer Research Project/Figures/Heatmap{plating}{culture}{div}{masterChannel}.eps', format='eps')
-        plt.clf()
-    print("Figures produced!")
+        # plt.savefig(f'C:/Users/Neel/OneDrive/Documents/Summer Research Project/Figures/Heatmap2_{plating}{culture}{div}{masterChannel}.eps', format='eps')
+        # plt.clf()
+        plt.show()
+    print(f"Figures produced for div {div}!")
 
     ## Making a tex file to make the pdf
-    changeMatrix=[[0 for i in range(8)] for j in range(8)]
+#     changeMatrix=[[0 for i in range(8)] for j in range(8)]
 
-    for i in range(64):
-        changeMatrix[numToCoord(i)[0]][numToCoord(i)[1]]=i
+#     for i in range(64):
+#         changeMatrix[numToCoord(i)[0]][numToCoord(i)[1]]=i
 
-    dirname = os.path.dirname(__file__)
-    path = f"C:/Users/Neel/OneDrive/Documents/Summer Research Project/Figures/heatmapTex{plating}{culture}{div}.tex"
-    file=open(path, "a")
-    file.write(
-    r'''\documentclass{standalone}
-\usepackage{graphicx}
-\graphicspath{{./Figures/}}
-\begin{document}
-\renewcommand{\arraystretch}{0}
-\setlength{\tabcolsep}{0pt}
-\begin{tabular}{ *8{c} }
-'''
-    )
+#     dirname = os.path.dirname(__file__)
+#     path = f"C:/Users/Neel/OneDrive/Documents/Summer Research Project/Figures/heatmapTex2_{plating}{culture}{div}.tex"
+#     file=open(path, "a")
+#     file.write(
+#     r'''\documentclass{standalone}
+# \usepackage{graphicx}
+# \graphicspath{{./Figures/}}
+# \begin{document}
+# \renewcommand{\arraystretch}{0}
+# \setlength{\tabcolsep}{0pt}
+# \begin{tabular}{ *8{c} }
+# '''
+#     )
 
-    for i in range(8):
-        for j in range(8):
-            if j==0 and (i==0 or i==7):
-                file.write(" & ")
-            elif j==7 and not (i==0 or i==7):
-                file.write(f"\includegraphics[width=.17\linewidth,height=.15\linewidth]{{Heatmap{plating}{culture}{div}{changeMatrix[i][j]}.eps}} ")
-            elif j==7:
-                file.write(" ")
-            else:
-                file.write(f"\includegraphics[width=.17\linewidth,height=.15\linewidth]{{Heatmap{plating}{culture}{div}{changeMatrix[i][j]}.eps}} & ")
-        if i!=7:
-            file.write("\\\\\n")
+#     for i in range(8):
+#         for j in range(8):
+#             if j==0 and (i==0 or i==7):
+#                 file.write(" & ")
+#             elif j==7 and not (i==0 or i==7):
+#                 file.write(f"\includegraphics[width=.17\linewidth,height=.15\linewidth]{{Heatmap2_{plating}{culture}{div}{changeMatrix[i][j]}.eps}} ")
+#             elif j==7:
+#                 file.write(" ")
+#             else:
+#                 file.write(f"\includegraphics[width=.17\linewidth,height=.15\linewidth]{{Heatmap2_{plating}{culture}{div}{changeMatrix[i][j]}.eps}} & ")
+#         if i!=7:
+#             file.write("\\\\\n")
 
-    file.write(
-        r'''
-\end{tabular}
-\end{document}
-        '''
-    )
-    file.close()
-print(f"{os.path.basename(__file__)} took ----- {time()-start_time} ----- seconds to run")
+#     file.write(
+#         r'''
+# \end{tabular}
+# \end{document}
+#         '''
+#     )
+#     file.close()
+# print(f"{os.path.basename(__file__)} took ----- {time()-start_time} ----- seconds to run")
