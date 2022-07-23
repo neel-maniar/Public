@@ -1,62 +1,37 @@
-import numpy as np
-from time import time
-import random
-random.seed(10)
-x = []
-for i in range(0,500):
-    l = random.randint(1,300)
-    x.append(l)
-
-y = []
-for i in range(0,500):
-    l = random.randint(1,300)
-    y.append(l)
-
-xArray=np.array(x)
-yArray=np.array(y)
-
-start_time = time()
-
-def linRegress(x,y):
-    if x.shape[0]!=y.shape[0]:
-        return("ERROR - Lists must be of the same length")
-    sumxsquared=np.sum(x**2)
-    sumysquared=np.sum(y**2)
-    sumx=np.sum(x)
-    sumy=np.sum(y)
-    n=x.shape[0]
-    sumxy=np.dot(x,y)
-    denominatorx=float(n*sumxsquared-sumx**2)
-    denominatory=float(n*sumysquared-sumy**2)
-    intercept=(sumxsquared*sumy-sumx*sumxy)/denominatorx
-    gradient=(n*sumxy-sumx*sumy)/denominatorx
-    r=(n*sumxy-sumx*sumy)/(denominatorx*denominatory)**0.5
-    print(type(denominatorx))
-    print((denominatorx*denominatory)**0.5)
-    return(intercept,gradient,r)
-    
-print(linRegress(xArray,yArray))
-
-print("Process finished --- %s seconds ---" % (time() - start_time))
-
-start_time=time()
-
-def linRegress(x,y):
-    if len(x)!=len(y):
-        return("ERROR - Lists must be of the same length")
-    sumxsquared=sum(i*i for i in x)
-    sumysquared=sum(i*i for i in y)
-    sumx=sum(x)
-    sumy=sum(y)
-    n=len(x)
-    sumxy=sum(x[i]*y[i] for i in range(n))
-    denominatorx=(n*sumxsquared-sumx**2)
-    denominatory=(n*sumysquared-sumy**2)
-    intercept=(sumxsquared*sumy-sumx*sumxy)/denominatorx
-    gradient=(n*sumxy-sumx*sumy)/denominatorx
-    r=(n*sumxy-sumx*sumy)/(denominatorx*denominatory)**0.5 
-    print((denominatorx*denominatory)**0.5)
-    return(intercept,gradient,r)
-
-print(linRegress(x,y))
-print("Process finished --- %s seconds ---" % (time() - start_time))
+import copy
+dataList=[
+    [1,1],
+    [2,2],
+    [3,3],
+    [4,1],
+    [5,2],
+    [6,3],
+    [7,1],
+    [8,2],
+    [9,3]
+]
+for masterChannel in range(60):
+    print(f"{masterChannel}/59")
+    timeListMasterChannel=[[index,row[0]] for index,row in enumerate(dataList) if row[1] == masterChannel]
+    timeIntervals=[[] for i in range(60)]
+    checkChannel=[i for i in range(60)]
+    for index,masterTime in timeListMasterChannel:
+        AppendedYet=[False for i in range(60)]
+        DoneFlag=False
+        count=index+1
+        while count<len(dataList) and DoneFlag==False:
+            data=dataList[count]
+            channel=data[1]
+            t=data[0]
+            if AppendedYet[channel]==False:
+                timeIntervals[channel].append(t-masterTime)
+                AppendedYet[channel]=True
+            DoneFlag=all([AppendedYet[i] for i in checkChannel])
+            print([AppendedYet[i] for i in checkChannel])
+            count+=1
+        checkChannelCopy=copy.deepcopy(checkChannel)
+        for channel in checkChannelCopy:
+            if AppendedYet[channel]==False:
+                checkChannel.remove(channel)
+        print("lo")
+    print(timeIntervals)    

@@ -7,6 +7,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import statistics
 from matplotlib.patches import Rectangle
+import copy
 
 # Measure how long the program takes to run
 start_time = time()
@@ -52,26 +53,31 @@ for div in divList:
     bz_file = bz2.BZ2File(newPath)
     data = bz_file.read().decode('ascii')
     dataList = [[float(line.split()[0]),int(line.split()[1])] for line in data.splitlines()]
-    for masterChannel in [21]:
+    for masterChannel in range(60):
         print(f"{masterChannel}/59")
         timeListMasterChannel=[[index,row[0]] for index,row in enumerate(dataList) if row[1] == masterChannel]
         timeIntervals=[[] for i in range(60)]
-        AppendedYet=[False for i in range(60)]
-        dontCheckChannel=[False for i in range(60)]
-        currMasterTime=0
-        prevMasterTime=0
+        checkChannel=[i for i in range(60)]
         for index,masterTime in timeListMasterChannel:
-            for data in dataList[index+1:]:
-                t=data[0]
+            tic=time()
+            AppendedYet=[False for i in range(60)]
+            DoneFlag=False
+            count=index+1
+            while count<len(dataList) and DoneFlag==False:
+                data=dataList[count]
                 channel=data[1]
-                if dontCheckChannel[channel]==False and AppendedYet[channel]==False:
+                t=data[0]
+                if AppendedYet[channel]==False:
                     timeIntervals[channel].append(t-masterTime)
                     AppendedYet[channel]=True
-            for index,value in enumerate(AppendedYet):
-                if value==False:
-                    dontCheckChannel[index]=True
-            AppendedYet=[False for i in range(60)]
-            print(f"{index} out of {len(dataList)}")
+                DoneFlag=all([AppendedYet[i] for i in checkChannel])
+                count+=1
+            print(count-index)
+            checkChannelCopy=copy.deepcopy(checkChannel)
+            for channel in checkChannelCopy:
+                if AppendedYet[channel]==False:
+                    checkChannel.remove(channel)
+            print(f"{index}/{timeListMasterChannel[-1]} took ----- {time()-tic} ----- seconds to run")
         
         def numToCoord(num):
             rows=[6, 7, 5, 4, 7, 6, 7, 5, 6, 6, 5, 5, 4, 4, 4, 3, 3, 3, 2, 2, 1, 1, 2, 0, 1, 0, 3, 2, 0, 1, 1, 0, 2, 3, 0, 1, 0, 2, 1, 1, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 6, 6, 5, 7, 6, 7, 4, 5, 7, 6, 0, 0, 7, 7, -1]
