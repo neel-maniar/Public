@@ -104,7 +104,7 @@ for div in divList:
         import numpy as np; np.random.seed(0)
         import seaborn as sns; sns.set_theme()
         uniform_data = np.array(cvListCoord)
-        ax = sns.heatmap(uniform_data,annot=numData,fmt='',vmin=0,mask=mask,robust=True)
+        ax = sns.heatmap(uniform_data,annot=cvListCoord,fmt='',vmin=0,vmax=2,mask=mask,robust=True)
         ax.set_title(f"Heat map of C_v of waiting times after master channel {masterChannel} in plating {plating}, culture {culture}, div {div}",wrap=True)
         position=(numToCoord(masterChannel)[1],numToCoord(masterChannel)[0])
         ax.add_patch(Rectangle(position, 1, 1, fill=False, edgecolor='blue', lw=3))
@@ -125,7 +125,7 @@ for div in divList:
     file.write(
     r'''\documentclass{standalone}
 \usepackage{graphicx}
-\graphicspath{{./Figures/}}
+\graphicspath{{../HeatMapFigs}}
 \begin{document}
 \renewcommand{\arraystretch}{0}
 \setlength{\tabcolsep}{0pt}
