@@ -104,7 +104,7 @@ for div in divList:
         import numpy as np; np.random.seed(0)
         import seaborn as sns; sns.set_theme()
         uniform_data = np.array(cvListCoord)
-        ax = sns.heatmap(uniform_data,annot=numData,fmt='',vmin=0,mask=mask,robust=True)
+        ax = sns.heatmap(uniform_data,annot=cvListCoord,fmt='',vmin=0,vmax=2,mask=mask,robust=True)
         ax.set_title(f"Heat map of C_v of waiting times after master channel {masterChannel} in plating {plating}, culture {culture}, div {div}",wrap=True)
         position=(numToCoord(masterChannel)[1],numToCoord(masterChannel)[0])
         ax.add_patch(Rectangle(position, 1, 1, fill=False, edgecolor='blue', lw=3))
@@ -113,44 +113,44 @@ for div in divList:
         plt.clf()
 #     print(f"Figures produced for div {div}!")
 
-#     # Making a tex file to make the pdf
-#     changeMatrix=[[0 for i in range(8)] for j in range(8)]
+    # Making a tex file to make the pdf
+    changeMatrix=[[0 for i in range(8)] for j in range(8)]
 
-#     for i in range(64):
-#         changeMatrix[numToCoord(i)[0]][numToCoord(i)[1]]=i
+    for i in range(64):
+        changeMatrix[numToCoord(i)[0]][numToCoord(i)[1]]=i
 
-#     dirname = os.path.dirname(__file__)
-#     path = f"{dirname}/tex/heatmapTex2_{plating}{culture}{div}.tex"
-#     file=open(path, "a")
-#     file.write(
-#     r'''\documentclass{standalone}
-# \usepackage{graphicx}
-# \graphicspath{{./Figures/}}
-# \begin{document}
-# \renewcommand{\arraystretch}{0}
-# \setlength{\tabcolsep}{0pt}
-# \begin{tabular}{ *8{c} }
-# '''
-#     )
+    dirname = os.path.dirname(__file__)
+    path = f"{dirname}/tex/heatmapTex2_{plating}{culture}{div}.tex"
+    file=open(path, "a")
+    file.write(
+    r'''\documentclass{standalone}
+\usepackage{graphicx}
+\graphicspath{{../HeatMapFigs}}
+\begin{document}
+\renewcommand{\arraystretch}{0}
+\setlength{\tabcolsep}{0pt}
+\begin{tabular}{ *8{c} }
+'''
+    )
 
-#     for i in range(8):
-#         for j in range(8):
-#             if j==0 and (i==0 or i==7):
-#                 file.write(" & ")
-#             elif j==7 and not (i==0 or i==7):
-#                 file.write(f"\includegraphics[width=.17\linewidth,height=.15\linewidth]{{Heatmap2_{plating}{culture}{div}{changeMatrix[i][j]}.eps}} ")
-#             elif j==7:
-#                 file.write(" ")
-#             else:
-#                 file.write(f"\includegraphics[width=.17\linewidth,height=.15\linewidth]{{Heatmap2_{plating}{culture}{div}{changeMatrix[i][j]}.eps}} & ")
-#         if i!=7:
-#             file.write("\\\\\n")
+    for i in range(8):
+        for j in range(8):
+            if j==0 and (i==0 or i==7):
+                file.write(" & ")
+            elif j==7 and not (i==0 or i==7):
+                file.write(f"\includegraphics[width=.17\linewidth,height=.15\linewidth]{{Heatmap2_{plating}{culture}{div}{changeMatrix[i][j]}.eps}} ")
+            elif j==7:
+                file.write(" ")
+            else:
+                file.write(f"\includegraphics[width=.17\linewidth,height=.15\linewidth]{{Heatmap2_{plating}{culture}{div}{changeMatrix[i][j]}.eps}} & ")
+        if i!=7:
+            file.write("\\\\\n")
 
-#     file.write(
-#         r'''
-# \end{tabular}
-# \end{document}
-#         '''
-#     )
-#     file.close()
-# print(f"{os.path.basename(__file__)} took ----- {time()-start_time} ----- seconds to run")
+    file.write(
+        r'''
+\end{tabular}
+\end{document}
+        '''
+    )
+    file.close()
+print(f"{os.path.basename(__file__)} took ----- {time()-start_time} ----- seconds to run")
