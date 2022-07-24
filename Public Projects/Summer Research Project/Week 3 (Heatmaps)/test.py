@@ -32,11 +32,11 @@ for i in range(8):
         if j==0 and (i==0 or i==7):
             file.write(" & ")
         elif j==7 and not (i==0 or i==7):
-            file.write(f"\includegraphics[width=.17\linewidth,height=.15\linewidth]{{Heatmap134{changeMatrix[i][j]}.eps}} ")
+            file.write(f"\includegraphics[width=.18\linewidth,height=.15\linewidth]{{Heatmap{plating}{culture}{div}{changeMatrix[i][j]}.eps}} ")
         elif j==7:
             file.write(" ")
         else:
-            file.write(f"\includegraphics[width=.17\linewidth,height=.15\linewidth]{{Heatmap134{changeMatrix[i][j]}.eps}} & ")
+            file.write(f"\includegraphics[width=.18\linewidth,height=.15\linewidth]{{Heatmap{plating}{culture}{div}{changeMatrix[i][j]}.eps}} & ")
     if i!=7:
         file.write("\\\\\n")
 
