@@ -15,7 +15,7 @@ start_time = time()
 # Parameters
 plating=2
 culture=2
-divList=[4,35]
+divList=[4,19,35]
 
 for div in divList:
     ## List of URLs for a particular day
@@ -103,13 +103,14 @@ for div in divList:
         # Plot Heatmap
         import numpy as np; np.random.seed(0)
         import seaborn as sns; sns.set_theme()
-        uniform_data = np.array(cvListCoord)
-        ax = sns.heatmap(uniform_data,annot=cvListCoord,fmt='',vmin=0,vmax=2,mask=mask,robust=True)
+        cvListArray = np.array(cvListCoord)
+        cvListRounded=np.around(cvListArray, decimals=3)
+        ax = sns.heatmap(cvListArray,annot=cvListArray,fmt='',vmin=0,vmax=2,mask=mask,robust=True)
         ax.set_title(f"Heat map of C_v of waiting times after master channel {masterChannel} in plating {plating}, culture {culture}, div {div}",wrap=True)
         position=(numToCoord(masterChannel)[1],numToCoord(masterChannel)[0])
         ax.add_patch(Rectangle(position, 1, 1, fill=False, edgecolor='blue', lw=3))
         dirname = os.path.dirname(__file__)
-        plt.savefig(f'{dirname}/Heatmaps/Heatmap2_{plating}{culture}{div}{masterChannel}.eps', format='eps')
+        plt.savefig(f'{dirname}/Heatmaps/Heatmap2_{plating}_{culture}_{div}_{masterChannel}.eps', format='eps')
         plt.clf()
 #     print(f"Figures produced for div {div}!")
 
@@ -120,12 +121,11 @@ for div in divList:
         changeMatrix[numToCoord(i)[0]][numToCoord(i)[1]]=i
 
     dirname = os.path.dirname(__file__)
-    path = f"{dirname}/tex/heatmapTex2_{plating}{culture}{div}.tex"
+    path = f"{dirname}/tex/heatmapTex2_{plating}_{culture}_{div}.tex"
     file=open(path, "a")
     file.write(
     r'''\documentclass{standalone}
 \usepackage{graphicx}
-\graphicspath{{../HeatMapFigs}}
 \begin{document}
 \renewcommand{\arraystretch}{0}
 \setlength{\tabcolsep}{0pt}
@@ -138,11 +138,11 @@ for div in divList:
             if j==0 and (i==0 or i==7):
                 file.write(" & ")
             elif j==7 and not (i==0 or i==7):
-                file.write(f"\includegraphics[width=.18\linewidth,height=.15\linewidth]{{Heatmap2_{plating}{culture}{div}{changeMatrix[i][j]}.eps}} ")
+                file.write(f"\includegraphics[width=.18\linewidth,height=.15\linewidth]{{Heatmap2_{plating}_{culture}_{div}_{changeMatrix[i][j]}.eps}} ")
             elif j==7:
                 file.write(" ")
             else:
-                file.write(f"\includegraphics[width=.18\linewidth,height=.15\linewidth]{{Heatmap2_{plating}{culture}{div}{changeMatrix[i][j]}.eps}} & ")
+                file.write(f"\includegraphics[width=.18\linewidth,height=.15\linewidth]{{Heatmap2_{plating}_{culture}_{div}_{changeMatrix[i][j]}.eps}} & ")
         if i!=7:
             file.write("\\\\\n")
 
