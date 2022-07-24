@@ -15,7 +15,7 @@ start_time = time()
 # Parameters
 plating=2
 culture=2
-divList=[14]
+divList=[4,35]
 
 for div in divList:
     ## List of URLs for a particular day
@@ -72,12 +72,11 @@ for div in divList:
                     AppendedYet[channel]=True
                 DoneFlag=all([AppendedYet[i] for i in checkChannel])
                 count+=1
-            print(count-index)
             checkChannelCopy=copy.deepcopy(checkChannel)
             for channel in checkChannelCopy:
                 if AppendedYet[channel]==False:
                     checkChannel.remove(channel)
-            print(f"{index}/{timeListMasterChannel[-1]} took ----- {time()-tic} ----- seconds to run")
+            # print(f"{index}/{timeListMasterChannel[-1]} took ----- {time()-tic} ----- seconds to run")
         
         def numToCoord(num):
             rows=[6, 7, 5, 4, 7, 6, 7, 5, 6, 6, 5, 5, 4, 4, 4, 3, 3, 3, 2, 2, 1, 1, 2, 0, 1, 0, 3, 2, 0, 1, 1, 0, 2, 3, 0, 1, 0, 2, 1, 1, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 6, 6, 5, 7, 6, 7, 4, 5, 7, 6, 0, 0, 7, 7, -1]
@@ -109,20 +108,19 @@ for div in divList:
         ax.set_title(f"Heat map of C_v of waiting times after master channel {masterChannel} in plating {plating}, culture {culture}, div {div}",wrap=True)
         position=(numToCoord(masterChannel)[1],numToCoord(masterChannel)[0])
         ax.add_patch(Rectangle(position, 1, 1, fill=False, edgecolor='blue', lw=3))
+        dirname = os.path.dirname(__file__)
+        plt.savefig(f'{dirname}/Heatmaps/Heatmap2_{plating}{culture}{div}{masterChannel}.eps', format='eps')
+        plt.clf()
+#     print(f"Figures produced for div {div}!")
 
-        # plt.savefig(f'C:/Users/Neel/OneDrive/Documents/Summer Research Project/Figures/Heatmap2_{plating}{culture}{div}{masterChannel}.eps', format='eps')
-        # plt.clf()
-        plt.show()
-    print(f"Figures produced for div {div}!")
-
-    ## Making a tex file to make the pdf
+#     # Making a tex file to make the pdf
 #     changeMatrix=[[0 for i in range(8)] for j in range(8)]
 
 #     for i in range(64):
 #         changeMatrix[numToCoord(i)[0]][numToCoord(i)[1]]=i
 
 #     dirname = os.path.dirname(__file__)
-#     path = f"C:/Users/Neel/OneDrive/Documents/Summer Research Project/Figures/heatmapTex2_{plating}{culture}{div}.tex"
+#     path = f"{dirname}/tex/heatmapTex2_{plating}{culture}{div}.tex"
 #     file=open(path, "a")
 #     file.write(
 #     r'''\documentclass{standalone}
