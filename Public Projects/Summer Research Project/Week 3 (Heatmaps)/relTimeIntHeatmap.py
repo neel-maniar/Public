@@ -105,7 +105,7 @@ for div in divList:
         import seaborn as sns; sns.set_theme()
         cvListArray = np.array(cvListCoord)
         cvListRounded=np.around(cvListArray, decimals=3)
-        ax = sns.heatmap(cvListArray,annot=cvListArray,fmt='',vmin=0,vmax=2,mask=mask,robust=True)
+        ax = sns.heatmap(cvListArray,annot=cvListRounded,fmt='',vmin=0,vmax=2,mask=mask,robust=True)
         ax.set_title(f"Heat map of C_v of waiting times after master channel {masterChannel} in plating {plating}, culture {culture}, div {div}",wrap=True)
         position=(numToCoord(masterChannel)[1],numToCoord(masterChannel)[0])
         ax.add_patch(Rectangle(position, 1, 1, fill=False, edgecolor='blue', lw=3))
