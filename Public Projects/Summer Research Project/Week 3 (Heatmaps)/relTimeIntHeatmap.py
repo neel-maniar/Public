@@ -13,9 +13,9 @@ import copy
 start_time = time()
 
 # Parameters
-plating=2
-culture=2
-divList=[4,19,35]
+plating=3
+culture=4
+divList=[20,31]
 
 for div in divList:
     ## List of URLs for a particular day
@@ -83,7 +83,6 @@ for div in divList:
             cols=[3, 3, 3, 3, 2, 2, 1, 2, 1, 0, 1, 0, 2, 1, 0, 0, 1, 2, 0, 1, 0, 1, 2, 1, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 6, 5, 6, 7, 6, 7, 5, 6, 7, 7, 6, 5, 7, 6, 7, 6, 5, 6, 5, 5, 4, 4, 4, 4, 0, 7, 0, 7, -1]
             return([rows[ num ],cols[ num ]])
         cvListCoord=np.array([[-100.0 for i in range(8)] for j in range(8)])
-        numData=[[0 for i in range(8)] for j in range(8)]
         for index,value in enumerate(timeIntervals):
             x=numToCoord(index)[1]
             y=numToCoord(index)[0]
@@ -92,11 +91,10 @@ for div in divList:
                 var=statistics.variance(value)
                 cv=(var/exp**2)**0.5
                 cvListCoord[y][x]=cv
-            numData[y][x]=str(len(value))
         mask=np.zeros_like(cvListCoord)
         mask[cvListCoord==-100]=True
-        numData=np.array(numData)
         count=0
+        numData=str(len(timeIntervals[masterChannel]))
         for entry in dataList:
             if entry[1]==14:
                 count+=1
@@ -106,7 +104,7 @@ for div in divList:
         cvListArray = np.array(cvListCoord)
         cvListRounded=np.around(cvListArray, decimals=3)
         ax = sns.heatmap(cvListArray,annot=cvListRounded,fmt='',vmin=0,vmax=2,mask=mask,robust=True)
-        ax.set_title(f"Heat map of C_v of waiting times after master channel {masterChannel} in plating {plating}, culture {culture}, div {div}",wrap=True)
+        ax.set_title(f"Heat map of C_v of waiting times after master channel {masterChannel} in plating {plating}, culture {culture}, div {div}, with {numData} datapoints in the highlighted channel",wrap=True)
         position=(numToCoord(masterChannel)[1],numToCoord(masterChannel)[0])
         ax.add_patch(Rectangle(position, 1, 1, fill=False, edgecolor='blue', lw=3))
         dirname = os.path.dirname(__file__)
