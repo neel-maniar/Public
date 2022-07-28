@@ -5,12 +5,15 @@ import matplotlib.pyplot as plt
 from matplotlib.patches import Rectangle
 import seaborn as sns; sns.set_theme()
 import sys
-sys.path.insert(0, 'C:/Users/Neel/My Python Coding/Public/Public Projects/Summer Research Project')
+from pathlib import Path
+dirname = os.path.dirname(__file__)
+grandParDir=(str(Path(__file__).parents[1]).replace(os.sep, '/'))
+sys.path.insert(0, grandParDir)
 from commonFunctions import *
 np.seterr(divide='ignore', invalid='ignore')
 
 # Measure how long the program takes to run
-
+start_time=time()
 
 # Parameters
 plating=1
@@ -43,14 +46,12 @@ for div in divList:
         mask[np.isnan(propMatrix)]=True
         # Plot Heatmap
         fig, ax = plt.subplots()
-        start_time = time()
         ax = sns.heatmap(propMatrix,annot=totDataMatrix,fmt='',mask=mask,robust=True)
-        print(f"{masterChannel}/59",time()-start_time)
-        ax.set_title(f"",wrap=True)
+        ax.set_title(f"Proportion of spikes which came directly after the master channel",wrap=True)
         position=(numToCoord(masterChannel)[1],numToCoord(masterChannel)[0])
         ax.add_patch(Rectangle(position, 1, 1, fill=False, edgecolor='blue', lw=3))
-        dirname = os.path.dirname(__file__)
         plt.savefig(f'{dirname}/Heatmaps/Heatmap{version}_{plating}_{culture}_{div}_{masterChannel}.eps', format='eps')
+        plt.close('all')
     print(f"Figures produced for div {div}!")
     texMaker(plating,culture,div,version)
 
