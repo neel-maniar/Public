@@ -15,7 +15,7 @@ start_time = time()
 # Parameters
 plating=3
 culture=4
-divList=[20,31]
+divList=[31]
 
 for div in divList:
     ## List of URLs for a particular day
