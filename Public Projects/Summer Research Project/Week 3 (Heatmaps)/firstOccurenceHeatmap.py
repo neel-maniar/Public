@@ -47,7 +47,7 @@ for div in divList:
         # Plot Heatmap
         fig, ax = plt.subplots()
         ax = sns.heatmap(propMatrix,annot=totDataMatrix,fmt='',mask=mask,robust=True)
-        ax.set_title(f"Proportion of spikes which came directly after the master channel",wrap=True)
+        ax.set_title(f"Proportion of spikes which came directly after the master channel {masterChannel} in plating {plating}, culture{culture}, div {div}",wrap=True)
         position=(numToCoord(masterChannel)[1],numToCoord(masterChannel)[0])
         ax.add_patch(Rectangle(position, 1, 1, fill=False, edgecolor='blue', lw=3))
         plt.savefig(f'{dirname}/Heatmaps/Heatmap{version}_{plating}_{culture}_{div}_{masterChannel}.eps', format='eps')
