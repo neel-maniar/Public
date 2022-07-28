@@ -10,7 +10,10 @@ import statistics
 from matplotlib.patches import Rectangle
 import copy
 import sys
-sys.path.insert(0, 'C:/Users/Neel/My Python Coding/Public/Public Projects/Summer Research Project')
+from pathlib import Path
+dirname = os.path.dirname(__file__)
+grandParDir=(str(Path(__file__).parents[1]).replace(os.sep, '/'))
+sys.path.insert(0, grandParDir)
 from commonFunctions import *
 np.seterr(divide='ignore', invalid='ignore')
 
@@ -30,7 +33,6 @@ for div in divList:
         timeIntervals=[[] for i in range(60)]
         checkChannel=[i for i in range(60)]
 
-        start_time = time()
 
         for index,masterTime in timeListMasterChannel:
             tic=time()
@@ -50,9 +52,8 @@ for div in divList:
             for channel in checkChannelCopy:
                 if AppendedYet[channel]==False:
                     checkChannel.remove(channel)
-            # print(f"{index}/{timeListMasterChannel[-1]} took ----- {time()-tic} ----- seconds to run")
+                    
 
-        print(f"{os.path.basename(__file__)} took ----- {time()-start_time} ----- seconds to run")
 
         cvListCoord=np.array([[-100.0 for i in range(8)] for j in range(8)])
         for index,value in enumerate(timeIntervals):
@@ -78,7 +79,6 @@ for div in divList:
         ax.set_title(f"Heat map of C_v of waiting times after master channel {masterChannel} in plating {plating}, culture {culture}, div {div}, with {numData} datapoints in the highlighted channel",wrap=True)
         position=(numToCoord(masterChannel)[1],numToCoord(masterChannel)[0])
         ax.add_patch(Rectangle(position, 1, 1, fill=False, edgecolor='blue', lw=3))
-        dirname = os.path.dirname(__file__)
         plt.savefig(f'{dirname}/Heatmaps/Heatmap{version}_{plating}_{culture}_{div}_{masterChannel}.eps', format='eps')
 
     texMaker(plating,culture,div,version)
