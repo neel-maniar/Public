@@ -62,6 +62,7 @@ def texMaker(plating,culture,div,version):
     file.write(
     r'''\documentclass{standalone}
 \usepackage{graphicx}
+\graphicspath{{./Heatmapfigs}}
 \begin{document}
 \renewcommand{\arraystretch}{0}
 \setlength{\tabcolsep}{0pt}
