@@ -37,10 +37,10 @@ for thing in range(len(platingList)):
         # Look for thing that spikes the most
         counts = np.bincount(channelList)
         mode=np.argmax(counts)
+        print(mode)
         modeTimeList=timeList[channelList==mode]
         modeTimeInterval=np.diff(modeTimeList)
-        fixedTimeInterval=statistics.mean(modeTimeInterval)/10
-        print("fixedTimeInterva:"+str(fixedTimeInterval))
+        fixedTimeInterval=statistics.mean(modeTimeInterval)/4
 
         for masterChannel in range(60): #change this back to 60
             print(f"{masterChannel}/59")
@@ -69,6 +69,7 @@ for thing in range(len(platingList)):
                         checkChannel.remove(channel)
 
             cvListCoord=np.array([[-100.0 for i in range(8)] for j in range(8)])
+            numDataCoord=np.zeros((8,8)).astype(str)
             for index,value in enumerate(timeIntervals):
                 x=numToCoord(index)[1]
                 y=numToCoord(index)[0]
@@ -77,16 +78,17 @@ for thing in range(len(platingList)):
                     var=statistics.variance(value)
                     cv=(var/exp**2)**0.5
                     cvListCoord[y][x]=cv
+                    numDataCoord[y][x]='\n'+str(len(value))
             mask=np.zeros_like(cvListCoord)
             mask[cvListCoord==-100]=True
-            numData=str(len(timeIntervals[masterChannel]))
 
             # Plot Heatmap
             fig, ax = plt.subplots()
             cvListArray = np.array(cvListCoord)
-            cvListRounded=np.around(cvListArray, decimals=3)
-            ax = sns.heatmap(cvListArray,annot=cvListRounded,fmt='',vmin=0,vmax=2,mask=mask,robust=True)
-            ax.set_title(f"Heat map of C_v of waiting times after master channel for a fixed time interval {fixedTimeInterval}s after {masterChannel} in plating {plating}, culture {culture}, div {div}, with {numData} datapoints in the highlighted channel.",wrap=True)
+            cvListRounded=(np.around(cvListArray, decimals=3)).astype(str)
+            annotation=np.core.defchararray.add(cvListRounded, numDataCoord)
+            ax = sns.heatmap(cvListArray,annot=annotation,fmt='',vmin=0,vmax=2,mask=mask,robust=True)
+            ax.set_title(f"Heat map of C_v of waiting times after master channel for a fixed time interval {fixedTimeInterval}s after {masterChannel} in plating {plating}, culture {culture}, div {div}.",wrap=True)
             position=(numToCoord(masterChannel)[1],numToCoord(masterChannel)[0])
             ax.add_patch(Rectangle(position, 1, 1, fill=False, edgecolor='blue', lw=3))
             plt.savefig(f'{dirname}/Heatmaps/Heatmap{version}_{plating}_{culture}_{div}_{masterChannel}.eps', format='eps')
