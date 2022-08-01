@@ -18,12 +18,12 @@ np.seterr(divide='ignore', invalid='ignore')
 start_time=time()
 
 # Parameters
-# platingList=[1,2,3,6]
-# cultureList=[3,2,4,1]
-# divListList=[[4,13,25],[4,19,35],[7,20,31],[4,19,34]]
-platingList=[1]
-cultureList=[3]
-divListList=[[4]]
+platingList=[1,2,3,6]
+cultureList=[3,2,4,1]
+divListList=[[4,13,25],[4,19,35],[7,20,31],[4,19,34]]
+# platingList=[1]
+# cultureList=[3]
+# divListList=[[4]]
 version=5
 
 for thing in range(len(platingList)):
@@ -37,10 +37,9 @@ for thing in range(len(platingList)):
         # Look for thing that spikes the most
         counts = np.bincount(channelList)
         mode=np.argmax(counts)
-        print(mode)
         modeTimeList=timeList[channelList==mode]
         modeTimeInterval=np.diff(modeTimeList)
-        fixedTimeInterval=statistics.mean(modeTimeInterval)/4
+        fixedTimeInterval=statistics.mean(modeTimeInterval)/10
 
         for masterChannel in range(60): #change this back to 60
             print(f"{masterChannel}/59")
