@@ -21,6 +21,9 @@ start_time=time()
 platingList=[1,2,3,6]
 cultureList=[3,2,4,1]
 divListList=[[4,13,25],[4,19,35],[7,20,31],[4,19,34]]
+# platingList=[1]
+# cultureList=[3]
+# divListList=[[4]]
 version=5
 
 for thing in range(len(platingList)):
@@ -38,8 +41,12 @@ for thing in range(len(platingList)):
         modeTimeInterval=np.diff(modeTimeList)
         fixedTimeInterval=statistics.mean(modeTimeInterval)/10
         for masterChannel in range(60): #change this back to 60
+            zeroFlag=False
             print(f"{masterChannel}/59")
             timeListMasterChannel=[[index,row[0]] for index,row in enumerate(dataList) if row[1] == masterChannel]
+            if len(timeListMasterChannel)==0:
+                print(f"No data for channel {masterChannel}")
+                zeroFlag=True
             timeIntervals=[[] for i in range(60)]
             numUnd1=0
             numOve1=0
@@ -59,7 +66,8 @@ for thing in range(len(platingList)):
                     numUnd1+=1
                 else:
                     numOve1+=1
-            num1Prop=str(round(numUnd1/(numUnd1+numOve1)*100,1))+'%'
+            if zeroFlag==False:
+                num1Prop=str(round(numUnd1/(numUnd1+numOve1)*100,1))+'%'
             
             cvListCoord=np.array([[-100.0 for i in range(8)] for j in range(8)])
             numDataCoord=np.zeros((8,8)).astype(str)
@@ -85,6 +93,7 @@ for thing in range(len(platingList)):
             position=(numToCoord(masterChannel)[1],numToCoord(masterChannel)[0])
             ax.add_patch(Rectangle(position, 1, 1, fill=False, edgecolor='blue', lw=3))
             plt.savefig(f'{dirname}/Heatmaps/Heatmap{version}_{plating}_{culture}_{div}_{masterChannel}.eps', format='eps')
+            plt.close('all')
         texMaker(plating,culture,div,version)
 
 print(f"{os.path.basename(__file__)} took ----- {time()-start_time} ----- seconds to run")
