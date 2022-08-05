@@ -19,9 +19,6 @@ start_time=time()
 platingList=[1,2,3,6]
 cultureList=[3,2,4,1]
 divListList=[[4,13,25],[4,19,35],[7,20,31],[4,19,34]]
-platingList=[1]
-cultureList=[3]
-divListList=[[25]]
 version=6
 
 for thing in range(len(platingList)):
@@ -35,7 +32,7 @@ for thing in range(len(platingList)):
         timeChannels=[[index for index,row in enumerate(dataList) if row[1]==channel] for channel in range(64)]
         t=[len(i) for i in timeChannels]
         phat=[i/sumT for i in t]
-        for masterChannel in range(23,24):
+        for masterChannel in range(60):
             masterIndices=np.array((channelList==masterChannel).nonzero()[0]).T
             totDataList=np.zeros(64).astype(int)
             pointsList=np.zeros(64).astype(int)
@@ -61,10 +58,10 @@ for thing in range(len(platingList)):
             ax.set_title(f"Observed/expected probabilities of a channel spiking after {masterChannel} in plating {plating}, culture {culture}, div {div}",wrap=True)
             position=(numToCoord(masterChannel)[1],numToCoord(masterChannel)[0])
             ax.add_patch(Rectangle(position, 1, 1, fill=False, edgecolor='blue', lw=3))
-            # plt.savefig(f'{dirname}/Heatmaps/Heatmap{version}_{plating}_{culture}_{div}_{masterChannel}.eps', format='eps')
-            plt.show()
+            plt.savefig(f'{dirname}/Heatmaps/Heatmap{version}_{plating}_{culture}_{div}_{masterChannel}.eps', format='eps')
+            # plt.show()
             plt.close('all')
         print(f"Figures produced for div {div}!")
-        # texMaker(plating,culture,div,version)
+        texMaker(plating,culture,div,version)
 
 print(f"{os.path.basename(__file__)} took ----- {time()-start_time} ----- seconds to run")
