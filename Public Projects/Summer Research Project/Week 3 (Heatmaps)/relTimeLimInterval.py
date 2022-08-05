@@ -41,9 +41,9 @@ for thing in range(len(platingList)):
         originalMean=(statistics.mean(modeTimeInterval))
         arr=(modeTimeInterval < originalMean)
         fixedTimeInterval=(statistics.mean(modeTimeInterval[arr]))/10
+        timeChannels=[[index for index,row in enumerate(dataList) if row[1]==channel] for channel in range(60)]
         for masterChannel in range(60): #change this back to 60
             print(f"{masterChannel}/59")
-            timeChannels=[[index for index,row in enumerate(dataList) if row[1]==channel] for channel in range(60)]
             timeListMasterChannel=[[index,row[0]] for index,row in enumerate(dataList) if row[1] == masterChannel]
             num1Und=[0 for i in range(60)]
             numTotal=[0 for i in range(60)]
