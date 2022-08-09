@@ -34,7 +34,7 @@ for thing in range(len(platingList)):
         t=[len(i) for i in timeChannels]
         totDataList=np.array(t)
         phat=[i/sumT for i in t]
-        for masterChannel in range(23,24):
+        for masterChannel in range(60):
             expected=[t[masterChannel]*i for i in phat]
             masterIndices=np.array((channelList==masterChannel).nonzero()[0]).T
             pointsList=np.zeros(64).astype(int) #pointsList is the observed o_i
