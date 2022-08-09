@@ -21,10 +21,13 @@ np.seterr(divide='ignore', invalid='ignore')
 start_time=time()
 
 # Parameters
-platingList=[1,2,3,6]
-cultureList=[3,2,4,1]
-divListList=[[4,13,25],[4,19,35],[7,20,31],[4,19,34]]
-version=5
+platingList=[1,2,3,6,7,7]
+cultureList=[3,2,4,1,1,2]
+divListList=[[4,13,25],[4,19,35],[7,20,31],[4,19,34],[4,20,35],[4,20,35]]
+version=9
+
+labelList=[]
+skewnessList=[]
 
 for thing in range(len(platingList)):
     plating=platingList[thing]
@@ -39,8 +42,11 @@ for thing in range(len(platingList)):
         mode=np.argmax(counts)
         modeTimeList=timeList[channelList==mode]
         modeTimeInterval=np.diff(modeTimeList)
-        skewness=skew(modeTimeInterval)
-        originalMean=(statistics.mean(modeTimeInterval))
-        arr=(modeTimeInterval < originalMean)
-        fixedTimeInterval=(statistics.mean(modeTimeInterval[arr]))/10
-        print(fixedTimeInterval,statistics.median(modeTimeInterval)/10)
+        labelList.append(f"{plating}-{culture}-{div}")
+        skewnessList.append(skew(modeTimeInterval,bias=False))
+
+fig, ax = plt.subplots()
+ax.bar(labelList,skewnessList)
+ax.set_title("Fischer-Pearson coefficient of skewness for various channels and divs",wrap=True)
+ax.set_xlabel("Plating-Culture-Div")
+plt.savefig(f'{dirname}/Heatmaps/SkewnessBarchart{version}.eps', format='eps')
