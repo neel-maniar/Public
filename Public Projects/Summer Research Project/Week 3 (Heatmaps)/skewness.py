@@ -24,6 +24,9 @@ start_time=time()
 platingList=[1,2,3,6,7,7]
 cultureList=[3,2,4,1,1,2]
 divListList=[[4,13,25],[4,19,35],[7,20,31],[4,19,34],[4,20,35],[4,20,35]]
+# platingList=[1]
+# cultureList=[3]
+# divListList=[[4,13,25]]
 version=9
 
 labelList=[]
@@ -49,4 +52,5 @@ fig, ax = plt.subplots()
 ax.bar(labelList,skewnessList)
 ax.set_title("Fischer-Pearson coefficient of skewness for various channels and divs",wrap=True)
 ax.set_xlabel("Plating-Culture-Div")
+fig.autofmt_xdate()
 plt.savefig(f'{dirname}/Heatmaps/SkewnessBarchart{version}.eps', format='eps')
