@@ -32,7 +32,6 @@ for i in range(len(platingList)):
         if match:
             xLabel.append(int(match.group(1)))
     cvList=[]
-    print(xLabel)
     for URL in listOfFiles[0:div]:
         ## Import Data from URL
         response = requests.get(URL)

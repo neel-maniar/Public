@@ -20,6 +20,9 @@ start_time=time()
 platingList=[1,2,3,6]
 cultureList=[3,2,4,1]
 divListList=[[4,13,25],[4,19,35],[7,20,31],[4,19,34]]
+platingList=[1]
+cultureList=[3]
+divListList=[[4]]
 version=7
 
 for thing in range(len(platingList)):
@@ -56,9 +59,8 @@ for thing in range(len(platingList)):
         ax = sns.heatmap(pValMatrix,annot=chiSquaredRounded,fmt='',robust=True,vmin=0,vmax=1,mask=mask)
         ax.set_title(f"p-value of first occurence data in plating {plating}, culture {culture}, div {div}",wrap=True)
         position=(numToCoord(masterChannel)[1],numToCoord(masterChannel)[0])
-        ax.add_patch(Rectangle(position, 1, 1, fill=False, edgecolor='blue', lw=3))
-        plt.savefig(f'{dirname}/Heatmaps/Heatmap{version}_{plating}_{culture}_{div}_{masterChannel}.eps', format='eps')
-        # plt.show()
+        # plt.savefig(f'{dirname}/Heatmaps/Heatmap{version}_{plating}_{culture}_{div}_{masterChannel}.eps', format='eps')
+        plt.show()
         plt.close('all')
         print(f"Figures produced for div {div}!")
         # texMaker(plating,culture,div,version)
