@@ -3,13 +3,14 @@ import bz2
 import os
 import shutil
 import requests
+from bisect import bisect
 import imageio.v2 as iio
 from timeit import default_timer as timer
 start = timer()
 
 ## Variables
-speed=100 # the higher the number, the slower it is
-flashDuration=400 # the higher the number, the slower it is
+speed=0.001 # the higher the number, the slower it is
+flashDuration=100 # the higher the number, the slower it is
 plating=1
 culture=3
 div=4
@@ -19,15 +20,20 @@ URL = f"https://neurodatasharing.bme.gatech.edu/development-data/simple-text/dai
 response = requests.get(URL)
 dirname = os.path.dirname(__file__)
 path = dirname+"\\testbz2"
-newPath = path.replace(os.sep, '/')
+newPath = path.replace(os.sep, '/') # Replaces / with \ so it can be read with Python
 open(newPath, "wb").write(response.content)
 
 ## Process data by reading it off as a string and converting to list
 bz_file = bz2.BZ2File(newPath)
 data = bz_file.read().decode('ascii')
-dataList = [[float(line.split()[0]),int(line.split()[1])] for line in data.splitlines()]
+
+dataList = [[float(line.split()[0]),int(line.split()[1])] for line in data.splitlines()] # Puts the data into a nice list
 timeList=[i[0] for i in dataList]
 numberList=[i[1] for i in dataList]
+frequency=[[] for i in range(60)]
+for i in dataList:
+    frequency[i[1]].append(i[0])
+## Quick checks on data
 if timeList==sorted(timeList):
     print("The times are in ascending order")
 if max(numberList)<=60 and min(numberList)>=1:
@@ -49,6 +55,7 @@ black=(0,0,0)
 red=(255,0,0)
 width=8
 
+## Grid mapping (electrode number to coordinates)
 def numToCoord(num):
     rows=[6, 7, 5, 4, 7, 6, 7, 5, 6, 6, 5, 5, 4, 4, 4, 3, 3, 3, 2, 2, 1, 1, 2, 0, 1, 0, 3, 2, 0, 1, 1, 0, 2, 3, 0, 1, 0, 2, 1, 1, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 6, 6, 5, 7, 6, 7, 4, 5, 7, 6, 0, 0, 7, 7, -1]
     cols=[3, 3, 3, 3, 2, 2, 1, 2, 1, 0, 1, 0, 2, 1, 0, 0, 1, 2, 0, 1, 0, 1, 2, 1, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 6, 5, 6, 7, 6, 7, 5, 6, 7, 7, 6, 5, 7, 6, 7, 6, 5, 6, 5, 5, 4, 4, 4, 4, 0, 7, 0, 7, -1]
@@ -68,20 +75,17 @@ pygame.display.update()
 onOffMatrix = [[0 for i in range(width)] for j in range(width)]
 
 ## Fading Colour
-def colourInterpolator(colour,t,i):
-    return(colour[i]+(255-colour[i])*(t))
 def fadingColour(t):
     colour=red
     fadedColour=[0,0,0]
     for i in range(0,3):
-        fadedColour[i]=colourInterpolator(colour,t,i)
+        fadedColour[i]=(colour[i]+(255-colour[i])*(t))
     fadedColour=[round(num) for num in fadedColour]
     return(tuple(fadedColour))
 
 ## Flash the colour on the screen
-def flash(num,timeOfActivation):
+def flash(num,t):
     [i,j]=numToCoord(num)
-    t=(pygame.time.get_ticks()-timeOfActivation)/400
     if 0<=t<=1:
         pygame.draw.rect(display,fadingColour(t),(squareWidth*j+0.5*edgeThickness+1,squareWidth*i+0.5*edgeThickness+1,squareWidth-edgeThickness-1,squareWidth-edgeThickness-1))
     if 1<t:
@@ -106,20 +110,24 @@ except OSError as error:
 run=True
 frameCount=0
 flag=False
-linesOfTextRendered=1
 while run:
     ## Handle quitting
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             run = False
     currentTime=pygame.time.get_ticks()
-    for i in range(len(numberList)):
-        timeOfActivation=round(timeList[i]*speed)
-        t=(currentTime-timeOfActivation)/flashDuration
-        if 0<=t<=2:
-            if i>linesOfTextRendered:
-                linesOfTextRendered=i
-            flash(numberList[i],timeOfActivation)
+    numFlashes=0
+    ## Iterate through the list of times to see whether they should be flashed or not.
+    for i,value in enumerate(frequency):
+        scaledList=[i/speed for i in value]
+        index=bisect(scaledList,currentTime)-1
+        numFlashes+=index+1
+        if len(value)>0 and 0<=index<len(value):
+            timeOfActivation=scaledList[index]
+            t=(currentTime-timeOfActivation)/flashDuration #Time since it flashed
+            print(currentTime,timeOfActivation)
+            if 0<=t<=2:
+                flash(i,t)
     pygame.image.save(display,folder+"/image"+str(frameCount)+".jpeg") # save each frame as a jpeg
     pygame.display.update()
     frameCount+=1
@@ -146,5 +154,5 @@ for filename in os.listdir(folder):
 
 end = timer()
 print("Time elapsed in program:",end - start)
-print("Number of flashes rendered:",linesOfTextRendered)
-print("Number of flashes in the bz2 file:", len(numberList))
+print("Number of flashes rendered:",numFlashes)
+print("Number of flashes on the day:", len(numberList))

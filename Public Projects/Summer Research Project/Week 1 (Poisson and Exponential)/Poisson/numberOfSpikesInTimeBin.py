@@ -17,7 +17,8 @@ divList=[19,35]
 channels=[[i] for i in range(60)] # Which channels do we want to monitor?
 
 # Which values of delta do we want to try?
-timeIntervalList=[0.01,0.05,0.1,0.2,0.5,1,2,3,4,5,6,7,8,10,20,50,100,200,300,500,1000]
+# timeIntervalList=[0.01,0.05,0.1,0.2,0.5,1,2,3,4,5,6,7,8,10,20,50,100,200,300,500,1000]
+timeIntervalList=[2,5,10,50,100]
 
 ## List of URLs for a particular day
 bigURL="https://neurodatasharing.bme.gatech.edu/development-data/html/wget/daily.spont.dense.text."+str(plating)+"."+str(culture)+".0.list"
@@ -41,6 +42,7 @@ def barChart(numOccurences, frequencies, timeInterval):
     plt.ylabel("Frequency")
     plt.title(f"Number of spikes in time bins of size {timeInterval} in all channels, plating {plating}, channel {channel}, div {div}",wrap=True)
     # plt.savefig(f'C:/Users/Neel/OneDrive/Documents/Summer Research Project/Figures/BarChart{plating}{channel}{div}{timeInterval}.eps', format='eps')
+    plt.show()
     plt.cla()
 
 for div in divList:
@@ -84,7 +86,7 @@ for div in divList:
                 var=sum([value*(index-exp)**2 for index,value in enumerate(frequencies)])/(sum(frequencies)-1)
                 cv=(var/exp**2)**0.5
                 cvList.append(cv)
-                # barChart(numOccurences, frequencies, timeInterval)
+                barChart(numOccurences, frequencies, timeInterval)
             cvMatrix.append(cvList)
             cvList=[]
     cvMatrix = numpy.asarray(cvMatrix)

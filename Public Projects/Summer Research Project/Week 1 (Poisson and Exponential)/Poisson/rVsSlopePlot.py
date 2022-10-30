@@ -49,6 +49,6 @@ plt.scatter(gradientList,rList)
 plt.title(title,wrap=True)
 plt.xlabel("Gradient")
 plt.ylabel("R-value")
-plt.savefig(f'C:/Users/Neel/OneDrive/Documents/Summer Research Project/Figures/rVsSlopePlot{plating}{culture}{div}.eps', format='eps')
+# plt.savefig(f'C:/Users/Neel/OneDrive/Documents/Summer Research Project/Figures/rVsSlopePlot{plating}{culture}{div}.eps', format='eps')
 plt.show()
 
