@@ -28,9 +28,11 @@ for i in range(len(platingList)):
     div=len(listOfFiles) #Change this to number of days if needed.
     xLabel=[]
     for line in listOfFiles:
+        print(line)
         match = re.search('(\d+)(?=\s*\.spk\.txt\.bz2)', line)
         if match:
             xLabel.append(int(match.group(1)))
+    print(xLabel)
     cvList=[]
     for URL in listOfFiles[0:div]:
         ## Import Data from URL
