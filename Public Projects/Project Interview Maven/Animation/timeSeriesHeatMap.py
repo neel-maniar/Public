@@ -10,7 +10,7 @@ start = timer()
 
 ## Variables
 speed=0.001 # the higher the number, the slower it is
-flashDuration=100 # the higher the number, the slower it is
+flashDuration=200 # the higher the number, the slower it is
 plating=1
 culture=3
 div=4
@@ -106,6 +106,7 @@ try:
 except OSError as error: 
     pass
 
+initialTime=pygame.time.get_ticks()
 ## Main Loop
 run=True
 frameCount=0
@@ -132,6 +133,7 @@ while run:
     pygame.display.update()
     frameCount+=1
 
+
 ## Convert images in the images folder to an mp4 video
 vnewPath = (vpath+"\movie.mp4").replace(os.sep, '/')
 number_files = len(os.listdir(folder))
@@ -153,6 +155,8 @@ for filename in os.listdir(folder):
 
 
 end = timer()
-print("Time elapsed in program:",end - start)
+print("Time elapsed in real life:",(currentTime-initialTime)*speed)
+print("Time elapsed in program:",(currentTime-initialTime)/1000)
+print("Total time taken for program to render:",end-start)
 print("Number of flashes rendered:",numFlashes)
 print("Number of flashes on the day:", len(numberList))
