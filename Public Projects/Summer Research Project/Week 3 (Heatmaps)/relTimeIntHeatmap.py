@@ -20,9 +20,9 @@ np.seterr(divide='ignore', invalid='ignore')
 # Measure how long the program takes to run
 
 # Parameters
-plating=3
-culture=4
-divList=[20,31]
+plating=1
+culture=3
+divList=[4]
 version=2
 
 for div in divList:

@@ -63,6 +63,6 @@ for thing in range(len(platingList)):
         plt.show()
         plt.close('all')
         print(f"Figures produced for div {div}!")
-        # texMaker(plating,culture,div,version)
+        texMaker(plating,culture,div,version)
 
 print(f"{os.path.basename(__file__)} took ----- {time()-start_time} ----- seconds to run")

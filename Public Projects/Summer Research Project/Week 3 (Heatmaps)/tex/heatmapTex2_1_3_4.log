@@ -1,0 +1,1527 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2022.11.20)  20 NOV 2022 10:23
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**./heatmapTex2_1_3_4.tex
+(heatmapTex2_1_3_4.tex
+LaTeX2e <2022-11-01>
+L3 programming layer <2022-11-02>
+(C:\Users\neelm\AppData\Local\Programs\MiKTeX\tex/latex/standalone\standalone.c
+ls
+Document Class: standalone 2022/10/10 v1.3b Class to compile TeX sub-files stan
+dalone
+(C:\Users\neelm\AppData\Local\Programs\MiKTeX\tex/latex/tools\shellesc.sty
+Package: shellesc 2019/11/08 v1.0c unified shell escape interface for LaTeX
+Package shellesc Info: Restricted shell escape enabled on input line 77.
+)
+(C:\Users\neelm\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifluatex.sty
+Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
+
+(C:\Users\neelm\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+))
+(C:\Users\neelm\AppData\Local\Programs\MiKTeX\tex/latex/xkeyval\xkeyval.sty
+Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
+
+(C:\Users\neelm\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\xkeyval.tex
+(C:\Users\neelm\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\xkvutils.tex
+\XKV@toks=\toks16
+\XKV@tempa@toks=\toks17
+
+(C:\Users\neelm\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\keyval.tex))
+\XKV@depth=\count185
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))
+\sa@internal=\count186
+\c@sapage=\count187
+
+(C:\Users\neelm\AppData\Local\Programs\MiKTeX\tex/latex/standalone\standalone.c
+fg
+File: standalone.cfg 2022/10/10 v1.3b Default configuration file for 'standalon
+e' class
+) (C:\Users\neelm\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
+Document Class: article 2022/07/02 v1.4n Standard LaTeX document class
+(C:\Users\neelm\AppData\Local\Programs\MiKTeX\tex/latex/base\size10.clo
+File: size10.clo 2022/07/02 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count188
+\c@section=\count189
+\c@subsection=\count190
+\c@subsubsection=\count191
+\c@paragraph=\count192
+\c@subparagraph=\count193
+\c@figure=\count194
+\c@table=\count195
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen140
+)
+\sa@box=\box51
+)
+(C:\Users\neelm\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+
+(C:\Users\neelm\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
+Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
+
+(C:\Users\neelm\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+)
+(C:\Users\neelm\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.c
+fg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 107.
+
+(C:\Users\neelm\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
+File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen141
+\Gin@req@width=\dimen142
+)
+(C:\Users\neelm\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdf
+tex.def
+File: l3backend-pdftex.def 2022-10-26 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count196
+\l__pdf_internal_box=\box52
+) (heatmapTex2_1_3_4.aux)
+\openout1 = `heatmapTex2_1_3_4.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+
+(C:\Users\neelm\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
+ii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count197
+\scratchdimen=\dimen143
+\scratchbox=\box53
+\nofMPsegments=\count198
+\nofMParguments=\count199
+\everyMPshowfont=\toks18
+\MPscratchCnt=\count266
+\MPscratchDim=\dimen144
+\MPnumerator=\count267
+\makeMPintoPDFobject=\count268
+\everyMPtoPDFconversion=\toks19
+)
+(C:\Users\neelm\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-b
+ase.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(C:\Users\neelm\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.c
+fg
+File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+))
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 6.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 6.
+
+
+LaTeX Warning: File `Heatmap2_1_3_4_23.eps' not found on input line 7.
+
+Package epstopdf Info: Source file: <Heatmap2_1_3_4_23.eps>
+(epstopdf)             Output file: <Heatmap2_1_3_4_23-eps-converted-to.pdf>
+(epstopdf)             Command: <miktex-epstopdf --outfile=Heatmap2_1_3_4_23-ep
+s-converted-to.pdf Heatmap2_1_3_4_23.eps>
+(epstopdf)             \includegraphics on input line 7.
+Package epstopdf Info: Output file is already uptodate.
+
+heatmapTex2_1_3_4.tex:7: Package pdftex.def Error: File `Heatmap2_1_3_4_23-eps-
+converted-to.pdf' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.7 ...eight=.15\linewidth]{Heatmap2_1_3_4_23.eps}
+                                                   & \includegraphics[width=...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `Heatmap2_1_3_4_25.eps' not found on input line 7.
+
+Package epstopdf Info: Source file: <Heatmap2_1_3_4_25.eps>
+(epstopdf)             Output file: <Heatmap2_1_3_4_25-eps-converted-to.pdf>
+(epstopdf)             Command: <miktex-epstopdf --outfile=Heatmap2_1_3_4_25-ep
+s-converted-to.pdf Heatmap2_1_3_4_25.eps>
+(epstopdf)             \includegraphics on input line 7.
+Package epstopdf Info: Output file is already uptodate.
+
+heatmapTex2_1_3_4.tex:7: Package pdftex.def Error: File `Heatmap2_1_3_4_25-eps-
+converted-to.pdf' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.7 ...eight=.15\linewidth]{Heatmap2_1_3_4_25.eps}
+                                                   & \includegraphics[width=...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `Heatmap2_1_3_4_28.eps' not found on input line 7.
+
+Package epstopdf Info: Source file: <Heatmap2_1_3_4_28.eps>
+(epstopdf)             Output file: <Heatmap2_1_3_4_28-eps-converted-to.pdf>
+(epstopdf)             Command: <miktex-epstopdf --outfile=Heatmap2_1_3_4_28-ep
+s-converted-to.pdf Heatmap2_1_3_4_28.eps>
+(epstopdf)             \includegraphics on input line 7.
+Package epstopdf Info: Output file is already uptodate.
+
+heatmapTex2_1_3_4.tex:7: Package pdftex.def Error: File `Heatmap2_1_3_4_28-eps-
+converted-to.pdf' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.7 ...eight=.15\linewidth]{Heatmap2_1_3_4_28.eps}
+                                                   & \includegraphics[width=...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `Heatmap2_1_3_4_31.eps' not found on input line 7.
+
+Package epstopdf Info: Source file: <Heatmap2_1_3_4_31.eps>
+(epstopdf)             Output file: <Heatmap2_1_3_4_31-eps-converted-to.pdf>
+(epstopdf)             Command: <miktex-epstopdf --outfile=Heatmap2_1_3_4_31-ep
+s-converted-to.pdf Heatmap2_1_3_4_31.eps>
+(epstopdf)             \includegraphics on input line 7.
+Package epstopdf Info: Output file is already uptodate.
+
+heatmapTex2_1_3_4.tex:7: Package pdftex.def Error: File `Heatmap2_1_3_4_31-eps-
+converted-to.pdf' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.7 ...eight=.15\linewidth]{Heatmap2_1_3_4_31.eps}
+                                                   & \includegraphics[width=...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `Heatmap2_1_3_4_34.eps' not found on input line 7.
+
+Package epstopdf Info: Source file: <Heatmap2_1_3_4_34.eps>
+(epstopdf)             Output file: <Heatmap2_1_3_4_34-eps-converted-to.pdf>
+(epstopdf)             Command: <miktex-epstopdf --outfile=Heatmap2_1_3_4_34-ep
+s-converted-to.pdf Heatmap2_1_3_4_34.eps>
+(epstopdf)             \includegraphics on input line 7.
+Package epstopdf Info: Output file is already uptodate.
+
+heatmapTex2_1_3_4.tex:7: Package pdftex.def Error: File `Heatmap2_1_3_4_34-eps-
+converted-to.pdf' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.7 ...eight=.15\linewidth]{Heatmap2_1_3_4_34.eps}
+                                                   & \includegraphics[width=...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `Heatmap2_1_3_4_36.eps' not found on input line 7.
+
+Package epstopdf Info: Source file: <Heatmap2_1_3_4_36.eps>
+(epstopdf)             Output file: <Heatmap2_1_3_4_36-eps-converted-to.pdf>
+(epstopdf)             Command: <miktex-epstopdf --outfile=Heatmap2_1_3_4_36-ep
+s-converted-to.pdf Heatmap2_1_3_4_36.eps>
+(epstopdf)             \includegraphics on input line 7.
+Package epstopdf Info: Output file is already uptodate.
+
+heatmapTex2_1_3_4.tex:7: Package pdftex.def Error: File `Heatmap2_1_3_4_36-eps-
+converted-to.pdf' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.7 ...eight=.15\linewidth]{Heatmap2_1_3_4_36.eps}
+                                                   &  \\
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `Heatmap2_1_3_4_20.eps' not found on input line 8.
+
+Package epstopdf Info: Source file: <Heatmap2_1_3_4_20.eps>
+(epstopdf)             Output file: <Heatmap2_1_3_4_20-eps-converted-to.pdf>
+(epstopdf)             Command: <miktex-epstopdf --outfile=Heatmap2_1_3_4_20-ep
+s-converted-to.pdf Heatmap2_1_3_4_20.eps>
+(epstopdf)             \includegraphics on input line 8.
+Package epstopdf Info: Output file is already uptodate.
+
+heatmapTex2_1_3_4.tex:8: Package pdftex.def Error: File `Heatmap2_1_3_4_20-eps-
+converted-to.pdf' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ...eight=.15\linewidth]{Heatmap2_1_3_4_20.eps}
+                                                   & \includegraphics[width=...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `Heatmap2_1_3_4_21.eps' not found on input line 8.
+
+Package epstopdf Info: Source file: <Heatmap2_1_3_4_21.eps>
+(epstopdf)             Output file: <Heatmap2_1_3_4_21-eps-converted-to.pdf>
+(epstopdf)             Command: <miktex-epstopdf --outfile=Heatmap2_1_3_4_21-ep
+s-converted-to.pdf Heatmap2_1_3_4_21.eps>
+(epstopdf)             \includegraphics on input line 8.
+Package epstopdf Info: Output file is already uptodate.
+
+heatmapTex2_1_3_4.tex:8: Package pdftex.def Error: File `Heatmap2_1_3_4_21-eps-
+converted-to.pdf' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ...eight=.15\linewidth]{Heatmap2_1_3_4_21.eps}
+                                                   & \includegraphics[width=...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `Heatmap2_1_3_4_24.eps' not found on input line 8.
+
+Package epstopdf Info: Source file: <Heatmap2_1_3_4_24.eps>
+(epstopdf)             Output file: <Heatmap2_1_3_4_24-eps-converted-to.pdf>
+(epstopdf)             Command: <miktex-epstopdf --outfile=Heatmap2_1_3_4_24-ep
+s-converted-to.pdf Heatmap2_1_3_4_24.eps>
+(epstopdf)             \includegraphics on input line 8.
+Package epstopdf Info: Output file is already uptodate.
+
+heatmapTex2_1_3_4.tex:8: Package pdftex.def Error: File `Heatmap2_1_3_4_24-eps-
+converted-to.pdf' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ...eight=.15\linewidth]{Heatmap2_1_3_4_24.eps}
+                                                   & \includegraphics[width=...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `Heatmap2_1_3_4_29.eps' not found on input line 8.
+
+Package epstopdf Info: Source file: <Heatmap2_1_3_4_29.eps>
+(epstopdf)             Output file: <Heatmap2_1_3_4_29-eps-converted-to.pdf>
+(epstopdf)             Command: <miktex-epstopdf --outfile=Heatmap2_1_3_4_29-ep
+s-converted-to.pdf Heatmap2_1_3_4_29.eps>
+(epstopdf)             \includegraphics on input line 8.
+Package epstopdf Info: Output file is already uptodate.
+
+heatmapTex2_1_3_4.tex:8: Package pdftex.def Error: File `Heatmap2_1_3_4_29-eps-
+converted-to.pdf' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ...eight=.15\linewidth]{Heatmap2_1_3_4_29.eps}
+                                                   & \includegraphics[width=...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `Heatmap2_1_3_4_30.eps' not found on input line 8.
+
+Package epstopdf Info: Source file: <Heatmap2_1_3_4_30.eps>
+(epstopdf)             Output file: <Heatmap2_1_3_4_30-eps-converted-to.pdf>
+(epstopdf)             Command: <miktex-epstopdf --outfile=Heatmap2_1_3_4_30-ep
+s-converted-to.pdf Heatmap2_1_3_4_30.eps>
+(epstopdf)             \includegraphics on input line 8.
+Package epstopdf Info: Output file is already uptodate.
+
+heatmapTex2_1_3_4.tex:8: Package pdftex.def Error: File `Heatmap2_1_3_4_30-eps-
+converted-to.pdf' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ...eight=.15\linewidth]{Heatmap2_1_3_4_30.eps}
+                                                   & \includegraphics[width=...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `Heatmap2_1_3_4_35.eps' not found on input line 8.
+
+Package epstopdf Info: Source file: <Heatmap2_1_3_4_35.eps>
+(epstopdf)             Output file: <Heatmap2_1_3_4_35-eps-converted-to.pdf>
+(epstopdf)             Command: <miktex-epstopdf --outfile=Heatmap2_1_3_4_35-ep
+s-converted-to.pdf Heatmap2_1_3_4_35.eps>
+(epstopdf)             \includegraphics on input line 8.
+Package epstopdf Info: Output file is already uptodate.
+
+heatmapTex2_1_3_4.tex:8: Package pdftex.def Error: File `Heatmap2_1_3_4_35-eps-
+converted-to.pdf' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ...eight=.15\linewidth]{Heatmap2_1_3_4_35.eps}
+                                                   & \includegraphics[width=...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `Heatmap2_1_3_4_38.eps' not found on input line 8.
+
+Package epstopdf Info: Source file: <Heatmap2_1_3_4_38.eps>
+(epstopdf)             Output file: <Heatmap2_1_3_4_38-eps-converted-to.pdf>
+(epstopdf)             Command: <miktex-epstopdf --outfile=Heatmap2_1_3_4_38-ep
+s-converted-to.pdf Heatmap2_1_3_4_38.eps>
+(epstopdf)             \includegraphics on input line 8.
+Package epstopdf Info: Output file is already uptodate.
+
+heatmapTex2_1_3_4.tex:8: Package pdftex.def Error: File `Heatmap2_1_3_4_38-eps-
+converted-to.pdf' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ...eight=.15\linewidth]{Heatmap2_1_3_4_38.eps}
+                                                   & \includegraphics[width=...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `Heatmap2_1_3_4_39.eps' not found on input line 8.
+
+Package epstopdf Info: Source file: <Heatmap2_1_3_4_39.eps>
+(epstopdf)             Output file: <Heatmap2_1_3_4_39-eps-converted-to.pdf>
+(epstopdf)             Command: <miktex-epstopdf --outfile=Heatmap2_1_3_4_39-ep
+s-converted-to.pdf Heatmap2_1_3_4_39.eps>
+(epstopdf)             \includegraphics on input line 8.
+Package epstopdf Info: Output file is already uptodate.
+
+heatmapTex2_1_3_4.tex:8: Package pdftex.def Error: File `Heatmap2_1_3_4_39-eps-
+converted-to.pdf' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ...eight=.15\linewidth]{Heatmap2_1_3_4_39.eps}
+                                                   \\
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `Heatmap2_1_3_4_18.eps' not found on input line 9.
+
+Package epstopdf Info: Source file: <Heatmap2_1_3_4_18.eps>
+(epstopdf)             Output file: <Heatmap2_1_3_4_18-eps-converted-to.pdf>
+(epstopdf)             Command: <miktex-epstopdf --outfile=Heatmap2_1_3_4_18-ep
+s-converted-to.pdf Heatmap2_1_3_4_18.eps>
+(epstopdf)             \includegraphics on input line 9.
+Package epstopdf Info: Output file is already uptodate.
+
+heatmapTex2_1_3_4.tex:9: Package pdftex.def Error: File `Heatmap2_1_3_4_18-eps-
+converted-to.pdf' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.9 ...eight=.15\linewidth]{Heatmap2_1_3_4_18.eps}
+                                                   & \includegraphics[width=...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `Heatmap2_1_3_4_19.eps' not found on input line 9.
+
+Package epstopdf Info: Source file: <Heatmap2_1_3_4_19.eps>
+(epstopdf)             Output file: <Heatmap2_1_3_4_19-eps-converted-to.pdf>
+(epstopdf)             Command: <miktex-epstopdf --outfile=Heatmap2_1_3_4_19-ep
+s-converted-to.pdf Heatmap2_1_3_4_19.eps>
+(epstopdf)             \includegraphics on input line 9.
+Package epstopdf Info: Output file is already uptodate.
+
+heatmapTex2_1_3_4.tex:9: Package pdftex.def Error: File `Heatmap2_1_3_4_19-eps-
+converted-to.pdf' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.9 ...eight=.15\linewidth]{Heatmap2_1_3_4_19.eps}
+                                                   & \includegraphics[width=...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `Heatmap2_1_3_4_22.eps' not found on input line 9.
+
+Package epstopdf Info: Source file: <Heatmap2_1_3_4_22.eps>
+(epstopdf)             Output file: <Heatmap2_1_3_4_22-eps-converted-to.pdf>
+(epstopdf)             Command: <miktex-epstopdf --outfile=Heatmap2_1_3_4_22-ep
+s-converted-to.pdf Heatmap2_1_3_4_22.eps>
+(epstopdf)             \includegraphics on input line 9.
+Package epstopdf Info: Output file is already uptodate.
+
+heatmapTex2_1_3_4.tex:9: Package pdftex.def Error: File `Heatmap2_1_3_4_22-eps-
+converted-to.pdf' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.9 ...eight=.15\linewidth]{Heatmap2_1_3_4_22.eps}
+                                                   & \includegraphics[width=...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `Heatmap2_1_3_4_27.eps' not found on input line 9.
+
+Package epstopdf Info: Source file: <Heatmap2_1_3_4_27.eps>
+(epstopdf)             Output file: <Heatmap2_1_3_4_27-eps-converted-to.pdf>
+(epstopdf)             Command: <miktex-epstopdf --outfile=Heatmap2_1_3_4_27-ep
+s-converted-to.pdf Heatmap2_1_3_4_27.eps>
+(epstopdf)             \includegraphics on input line 9.
+Package epstopdf Info: Output file is already uptodate.
+
+heatmapTex2_1_3_4.tex:9: Package pdftex.def Error: File `Heatmap2_1_3_4_27-eps-
+converted-to.pdf' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.9 ...eight=.15\linewidth]{Heatmap2_1_3_4_27.eps}
+                                                   & \includegraphics[width=...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `Heatmap2_1_3_4_32.eps' not found on input line 9.
+
+Package epstopdf Info: Source file: <Heatmap2_1_3_4_32.eps>
+(epstopdf)             Output file: <Heatmap2_1_3_4_32-eps-converted-to.pdf>
+(epstopdf)             Command: <miktex-epstopdf --outfile=Heatmap2_1_3_4_32-ep
+s-converted-to.pdf Heatmap2_1_3_4_32.eps>
+(epstopdf)             \includegraphics on input line 9.
+Package epstopdf Info: Output file is already uptodate.
+
+heatmapTex2_1_3_4.tex:9: Package pdftex.def Error: File `Heatmap2_1_3_4_32-eps-
+converted-to.pdf' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.9 ...eight=.15\linewidth]{Heatmap2_1_3_4_32.eps}
+                                                   & \includegraphics[width=...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `Heatmap2_1_3_4_37.eps' not found on input line 9.
+
+Package epstopdf Info: Source file: <Heatmap2_1_3_4_37.eps>
+(epstopdf)             Output file: <Heatmap2_1_3_4_37-eps-converted-to.pdf>
+(epstopdf)             Command: <miktex-epstopdf --outfile=Heatmap2_1_3_4_37-ep
+s-converted-to.pdf Heatmap2_1_3_4_37.eps>
+(epstopdf)             \includegraphics on input line 9.
+Package epstopdf Info: Output file is already uptodate.
+
+heatmapTex2_1_3_4.tex:9: Package pdftex.def Error: File `Heatmap2_1_3_4_37-eps-
+converted-to.pdf' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.9 ...eight=.15\linewidth]{Heatmap2_1_3_4_37.eps}
+                                                   & \includegraphics[width=...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `Heatmap2_1_3_4_40.eps' not found on input line 9.
+
+Package epstopdf Info: Source file: <Heatmap2_1_3_4_40.eps>
+(epstopdf)             Output file: <Heatmap2_1_3_4_40-eps-converted-to.pdf>
+(epstopdf)             Command: <miktex-epstopdf --outfile=Heatmap2_1_3_4_40-ep
+s-converted-to.pdf Heatmap2_1_3_4_40.eps>
+(epstopdf)             \includegraphics on input line 9.
+Package epstopdf Info: Output file is already uptodate.
+
+heatmapTex2_1_3_4.tex:9: Package pdftex.def Error: File `Heatmap2_1_3_4_40-eps-
+converted-to.pdf' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.9 ...eight=.15\linewidth]{Heatmap2_1_3_4_40.eps}
+                                                   & \includegraphics[width=...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `Heatmap2_1_3_4_41.eps' not found on input line 9.
+
+Package epstopdf Info: Source file: <Heatmap2_1_3_4_41.eps>
+(epstopdf)             Output file: <Heatmap2_1_3_4_41-eps-converted-to.pdf>
+(epstopdf)             Command: <miktex-epstopdf --outfile=Heatmap2_1_3_4_41-ep
+s-converted-to.pdf Heatmap2_1_3_4_41.eps>
+(epstopdf)             \includegraphics on input line 9.
+Package epstopdf Info: Output file is already uptodate.
+
+heatmapTex2_1_3_4.tex:9: Package pdftex.def Error: File `Heatmap2_1_3_4_41-eps-
+converted-to.pdf' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.9 ...eight=.15\linewidth]{Heatmap2_1_3_4_41.eps}
+                                                   \\
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `Heatmap2_1_3_4_15.eps' not found on input line 10.
+
+Package epstopdf Info: Source file: <Heatmap2_1_3_4_15.eps>
+(epstopdf)             Output file: <Heatmap2_1_3_4_15-eps-converted-to.pdf>
+(epstopdf)             Command: <miktex-epstopdf --outfile=Heatmap2_1_3_4_15-ep
+s-converted-to.pdf Heatmap2_1_3_4_15.eps>
+(epstopdf)             \includegraphics on input line 10.
+Package epstopdf Info: Output file is already uptodate.
+
+heatmapTex2_1_3_4.tex:10: Package pdftex.def Error: File `Heatmap2_1_3_4_15-eps
+-converted-to.pdf' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 ...ight=.15\linewidth]{Heatmap2_1_3_4_15.eps}
+                                                   & \includegraphics[width=...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `Heatmap2_1_3_4_16.eps' not found on input line 10.
+
+Package epstopdf Info: Source file: <Heatmap2_1_3_4_16.eps>
+(epstopdf)             Output file: <Heatmap2_1_3_4_16-eps-converted-to.pdf>
+(epstopdf)             Command: <miktex-epstopdf --outfile=Heatmap2_1_3_4_16-ep
+s-converted-to.pdf Heatmap2_1_3_4_16.eps>
+(epstopdf)             \includegraphics on input line 10.
+Package epstopdf Info: Output file is already uptodate.
+
+heatmapTex2_1_3_4.tex:10: Package pdftex.def Error: File `Heatmap2_1_3_4_16-eps
+-converted-to.pdf' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 ...ight=.15\linewidth]{Heatmap2_1_3_4_16.eps}
+                                                   & \includegraphics[width=...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `Heatmap2_1_3_4_17.eps' not found on input line 10.
+
+Package epstopdf Info: Source file: <Heatmap2_1_3_4_17.eps>
+(epstopdf)             Output file: <Heatmap2_1_3_4_17-eps-converted-to.pdf>
+(epstopdf)             Command: <miktex-epstopdf --outfile=Heatmap2_1_3_4_17-ep
+s-converted-to.pdf Heatmap2_1_3_4_17.eps>
+(epstopdf)             \includegraphics on input line 10.
+Package epstopdf Info: Output file is already uptodate.
+
+heatmapTex2_1_3_4.tex:10: Package pdftex.def Error: File `Heatmap2_1_3_4_17-eps
+-converted-to.pdf' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 ...ight=.15\linewidth]{Heatmap2_1_3_4_17.eps}
+                                                   & \includegraphics[width=...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `Heatmap2_1_3_4_26.eps' not found on input line 10.
+
+Package epstopdf Info: Source file: <Heatmap2_1_3_4_26.eps>
+(epstopdf)             Output file: <Heatmap2_1_3_4_26-eps-converted-to.pdf>
+(epstopdf)             Command: <miktex-epstopdf --outfile=Heatmap2_1_3_4_26-ep
+s-converted-to.pdf Heatmap2_1_3_4_26.eps>
+(epstopdf)             \includegraphics on input line 10.
+Package epstopdf Info: Output file is already uptodate.
+
+heatmapTex2_1_3_4.tex:10: Package pdftex.def Error: File `Heatmap2_1_3_4_26-eps
+-converted-to.pdf' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 ...ight=.15\linewidth]{Heatmap2_1_3_4_26.eps}
+                                                   & \includegraphics[width=...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `Heatmap2_1_3_4_33.eps' not found on input line 10.
+
+Package epstopdf Info: Source file: <Heatmap2_1_3_4_33.eps>
+(epstopdf)             Output file: <Heatmap2_1_3_4_33-eps-converted-to.pdf>
+(epstopdf)             Command: <miktex-epstopdf --outfile=Heatmap2_1_3_4_33-ep
+s-converted-to.pdf Heatmap2_1_3_4_33.eps>
+(epstopdf)             \includegraphics on input line 10.
+Package epstopdf Info: Output file is already uptodate.
+
+heatmapTex2_1_3_4.tex:10: Package pdftex.def Error: File `Heatmap2_1_3_4_33-eps
+-converted-to.pdf' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 ...ight=.15\linewidth]{Heatmap2_1_3_4_33.eps}
+                                                   & \includegraphics[width=...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `Heatmap2_1_3_4_42.eps' not found on input line 10.
+
+Package epstopdf Info: Source file: <Heatmap2_1_3_4_42.eps>
+(epstopdf)             Output file: <Heatmap2_1_3_4_42-eps-converted-to.pdf>
+(epstopdf)             Command: <miktex-epstopdf --outfile=Heatmap2_1_3_4_42-ep
+s-converted-to.pdf Heatmap2_1_3_4_42.eps>
+(epstopdf)             \includegraphics on input line 10.
+Package epstopdf Info: Output file is already uptodate.
+
+heatmapTex2_1_3_4.tex:10: Package pdftex.def Error: File `Heatmap2_1_3_4_42-eps
+-converted-to.pdf' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 ...ight=.15\linewidth]{Heatmap2_1_3_4_42.eps}
+                                                   & \includegraphics[width=...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `Heatmap2_1_3_4_43.eps' not found on input line 10.
+
+Package epstopdf Info: Source file: <Heatmap2_1_3_4_43.eps>
+(epstopdf)             Output file: <Heatmap2_1_3_4_43-eps-converted-to.pdf>
+(epstopdf)             Command: <miktex-epstopdf --outfile=Heatmap2_1_3_4_43-ep
+s-converted-to.pdf Heatmap2_1_3_4_43.eps>
+(epstopdf)             \includegraphics on input line 10.
+Package epstopdf Info: Output file is already uptodate.
+
+heatmapTex2_1_3_4.tex:10: Package pdftex.def Error: File `Heatmap2_1_3_4_43-eps
+-converted-to.pdf' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 ...ight=.15\linewidth]{Heatmap2_1_3_4_43.eps}
+                                                   & \includegraphics[width=...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `Heatmap2_1_3_4_44.eps' not found on input line 10.
+
+Package epstopdf Info: Source file: <Heatmap2_1_3_4_44.eps>
+(epstopdf)             Output file: <Heatmap2_1_3_4_44-eps-converted-to.pdf>
+(epstopdf)             Command: <miktex-epstopdf --outfile=Heatmap2_1_3_4_44-ep
+s-converted-to.pdf Heatmap2_1_3_4_44.eps>
+(epstopdf)             \includegraphics on input line 10.
+Package epstopdf Info: Output file is already uptodate.
+
+heatmapTex2_1_3_4.tex:10: Package pdftex.def Error: File `Heatmap2_1_3_4_44-eps
+-converted-to.pdf' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 ...ight=.15\linewidth]{Heatmap2_1_3_4_44.eps}
+                                                   \\
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `Heatmap2_1_3_4_14.eps' not found on input line 11.
+
+Package epstopdf Info: Source file: <Heatmap2_1_3_4_14.eps>
+(epstopdf)             Output file: <Heatmap2_1_3_4_14-eps-converted-to.pdf>
+(epstopdf)             Command: <miktex-epstopdf --outfile=Heatmap2_1_3_4_14-ep
+s-converted-to.pdf Heatmap2_1_3_4_14.eps>
+(epstopdf)             \includegraphics on input line 11.
+Package epstopdf Info: Output file is already uptodate.
+
+heatmapTex2_1_3_4.tex:11: Package pdftex.def Error: File `Heatmap2_1_3_4_14-eps
+-converted-to.pdf' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.11 ...ight=.15\linewidth]{Heatmap2_1_3_4_14.eps}
+                                                   & \includegraphics[width=...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `Heatmap2_1_3_4_13.eps' not found on input line 11.
+
+Package epstopdf Info: Source file: <Heatmap2_1_3_4_13.eps>
+(epstopdf)             Output file: <Heatmap2_1_3_4_13-eps-converted-to.pdf>
+(epstopdf)             Command: <miktex-epstopdf --outfile=Heatmap2_1_3_4_13-ep
+s-converted-to.pdf Heatmap2_1_3_4_13.eps>
+(epstopdf)             \includegraphics on input line 11.
+Package epstopdf Info: Output file is already uptodate.
+
+heatmapTex2_1_3_4.tex:11: Package pdftex.def Error: File `Heatmap2_1_3_4_13-eps
+-converted-to.pdf' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.11 ...ight=.15\linewidth]{Heatmap2_1_3_4_13.eps}
+                                                   & \includegraphics[width=...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `Heatmap2_1_3_4_12.eps' not found on input line 11.
+
+Package epstopdf Info: Source file: <Heatmap2_1_3_4_12.eps>
+(epstopdf)             Output file: <Heatmap2_1_3_4_12-eps-converted-to.pdf>
+(epstopdf)             Command: <miktex-epstopdf --outfile=Heatmap2_1_3_4_12-ep
+s-converted-to.pdf Heatmap2_1_3_4_12.eps>
+(epstopdf)             \includegraphics on input line 11.
+Package epstopdf Info: Output file is already uptodate.
+
+heatmapTex2_1_3_4.tex:11: Package pdftex.def Error: File `Heatmap2_1_3_4_12-eps
+-converted-to.pdf' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.11 ...ight=.15\linewidth]{Heatmap2_1_3_4_12.eps}
+                                                   & \includegraphics[width=...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `Heatmap2_1_3_4_3.eps' not found on input line 11.
+
+Package epstopdf Info: Source file: <Heatmap2_1_3_4_3.eps>
+(epstopdf)             Output file: <Heatmap2_1_3_4_3-eps-converted-to.pdf>
+(epstopdf)             Command: <miktex-epstopdf --outfile=Heatmap2_1_3_4_3-eps
+-converted-to.pdf Heatmap2_1_3_4_3.eps>
+(epstopdf)             \includegraphics on input line 11.
+Package epstopdf Info: Output file is already uptodate.
+
+heatmapTex2_1_3_4.tex:11: Package pdftex.def Error: File `Heatmap2_1_3_4_3-eps-
+converted-to.pdf' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.11 ...eight=.15\linewidth]{Heatmap2_1_3_4_3.eps}
+                                                   & \includegraphics[width=...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `Heatmap2_1_3_4_56.eps' not found on input line 11.
+
+Package epstopdf Info: Source file: <Heatmap2_1_3_4_56.eps>
+(epstopdf)             Output file: <Heatmap2_1_3_4_56-eps-converted-to.pdf>
+(epstopdf)             Command: <miktex-epstopdf --outfile=Heatmap2_1_3_4_56-ep
+s-converted-to.pdf Heatmap2_1_3_4_56.eps>
+(epstopdf)             \includegraphics on input line 11.
+Package epstopdf Info: Output file is already uptodate.
+
+heatmapTex2_1_3_4.tex:11: Package pdftex.def Error: File `Heatmap2_1_3_4_56-eps
+-converted-to.pdf' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.11 ...ight=.15\linewidth]{Heatmap2_1_3_4_56.eps}
+                                                   & \includegraphics[width=...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `Heatmap2_1_3_4_47.eps' not found on input line 11.
+
+Package epstopdf Info: Source file: <Heatmap2_1_3_4_47.eps>
+(epstopdf)             Output file: <Heatmap2_1_3_4_47-eps-converted-to.pdf>
+(epstopdf)             Command: <miktex-epstopdf --outfile=Heatmap2_1_3_4_47-ep
+s-converted-to.pdf Heatmap2_1_3_4_47.eps>
+(epstopdf)             \includegraphics on input line 11.
+Package epstopdf Info: Output file is already uptodate.
+
+heatmapTex2_1_3_4.tex:11: Package pdftex.def Error: File `Heatmap2_1_3_4_47-eps
+-converted-to.pdf' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.11 ...ight=.15\linewidth]{Heatmap2_1_3_4_47.eps}
+                                                   & \includegraphics[width=...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `Heatmap2_1_3_4_46.eps' not found on input line 11.
+
+Package epstopdf Info: Source file: <Heatmap2_1_3_4_46.eps>
+(epstopdf)             Output file: <Heatmap2_1_3_4_46-eps-converted-to.pdf>
+(epstopdf)             Command: <miktex-epstopdf --outfile=Heatmap2_1_3_4_46-ep
+s-converted-to.pdf Heatmap2_1_3_4_46.eps>
+(epstopdf)             \includegraphics on input line 11.
+Package epstopdf Info: Output file is already uptodate.
+
+heatmapTex2_1_3_4.tex:11: Package pdftex.def Error: File `Heatmap2_1_3_4_46-eps
+-converted-to.pdf' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.11 ...ight=.15\linewidth]{Heatmap2_1_3_4_46.eps}
+                                                   & \includegraphics[width=...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `Heatmap2_1_3_4_45.eps' not found on input line 11.
+
+Package epstopdf Info: Source file: <Heatmap2_1_3_4_45.eps>
+(epstopdf)             Output file: <Heatmap2_1_3_4_45-eps-converted-to.pdf>
+(epstopdf)             Command: <miktex-epstopdf --outfile=Heatmap2_1_3_4_45-ep
+s-converted-to.pdf Heatmap2_1_3_4_45.eps>
+(epstopdf)             \includegraphics on input line 11.
+Package epstopdf Info: Output file is already uptodate.
+
+heatmapTex2_1_3_4.tex:11: Package pdftex.def Error: File `Heatmap2_1_3_4_45-eps
+-converted-to.pdf' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.11 ...ight=.15\linewidth]{Heatmap2_1_3_4_45.eps}
+                                                   \\
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `Heatmap2_1_3_4_11.eps' not found on input line 12.
+
+Package epstopdf Info: Source file: <Heatmap2_1_3_4_11.eps>
+(epstopdf)             Output file: <Heatmap2_1_3_4_11-eps-converted-to.pdf>
+(epstopdf)             Command: <miktex-epstopdf --outfile=Heatmap2_1_3_4_11-ep
+s-converted-to.pdf Heatmap2_1_3_4_11.eps>
+(epstopdf)             \includegraphics on input line 12.
+Package epstopdf Info: Output file is already uptodate.
+
+heatmapTex2_1_3_4.tex:12: Package pdftex.def Error: File `Heatmap2_1_3_4_11-eps
+-converted-to.pdf' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.12 ...ight=.15\linewidth]{Heatmap2_1_3_4_11.eps}
+                                                   & \includegraphics[width=...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `Heatmap2_1_3_4_10.eps' not found on input line 12.
+
+Package epstopdf Info: Source file: <Heatmap2_1_3_4_10.eps>
+(epstopdf)             Output file: <Heatmap2_1_3_4_10-eps-converted-to.pdf>
+(epstopdf)             Command: <miktex-epstopdf --outfile=Heatmap2_1_3_4_10-ep
+s-converted-to.pdf Heatmap2_1_3_4_10.eps>
+(epstopdf)             \includegraphics on input line 12.
+Package epstopdf Info: Output file is already uptodate.
+
+heatmapTex2_1_3_4.tex:12: Package pdftex.def Error: File `Heatmap2_1_3_4_10-eps
+-converted-to.pdf' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.12 ...ight=.15\linewidth]{Heatmap2_1_3_4_10.eps}
+                                                   & \includegraphics[width=...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `Heatmap2_1_3_4_7.eps' not found on input line 12.
+
+Package epstopdf Info: Source file: <Heatmap2_1_3_4_7.eps>
+(epstopdf)             Output file: <Heatmap2_1_3_4_7-eps-converted-to.pdf>
+(epstopdf)             Command: <miktex-epstopdf --outfile=Heatmap2_1_3_4_7-eps
+-converted-to.pdf Heatmap2_1_3_4_7.eps>
+(epstopdf)             \includegraphics on input line 12.
+Package epstopdf Info: Output file is already uptodate.
+
+heatmapTex2_1_3_4.tex:12: Package pdftex.def Error: File `Heatmap2_1_3_4_7-eps-
+converted-to.pdf' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.12 ...eight=.15\linewidth]{Heatmap2_1_3_4_7.eps}
+                                                   & \includegraphics[width=...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `Heatmap2_1_3_4_2.eps' not found on input line 12.
+
+Package epstopdf Info: Source file: <Heatmap2_1_3_4_2.eps>
+(epstopdf)             Output file: <Heatmap2_1_3_4_2-eps-converted-to.pdf>
+(epstopdf)             Command: <miktex-epstopdf --outfile=Heatmap2_1_3_4_2-eps
+-converted-to.pdf Heatmap2_1_3_4_2.eps>
+(epstopdf)             \includegraphics on input line 12.
+Package epstopdf Info: Output file is already uptodate.
+
+heatmapTex2_1_3_4.tex:12: Package pdftex.def Error: File `Heatmap2_1_3_4_2-eps-
+converted-to.pdf' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.12 ...eight=.15\linewidth]{Heatmap2_1_3_4_2.eps}
+                                                   & \includegraphics[width=...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `Heatmap2_1_3_4_57.eps' not found on input line 12.
+
+Package epstopdf Info: Source file: <Heatmap2_1_3_4_57.eps>
+(epstopdf)             Output file: <Heatmap2_1_3_4_57-eps-converted-to.pdf>
+(epstopdf)             Command: <miktex-epstopdf --outfile=Heatmap2_1_3_4_57-ep
+s-converted-to.pdf Heatmap2_1_3_4_57.eps>
+(epstopdf)             \includegraphics on input line 12.
+Package epstopdf Info: Output file is already uptodate.
+
+heatmapTex2_1_3_4.tex:12: Package pdftex.def Error: File `Heatmap2_1_3_4_57-eps
+-converted-to.pdf' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.12 ...ight=.15\linewidth]{Heatmap2_1_3_4_57.eps}
+                                                   & \includegraphics[width=...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `Heatmap2_1_3_4_52.eps' not found on input line 12.
+
+Package epstopdf Info: Source file: <Heatmap2_1_3_4_52.eps>
+(epstopdf)             Output file: <Heatmap2_1_3_4_52-eps-converted-to.pdf>
+(epstopdf)             Command: <miktex-epstopdf --outfile=Heatmap2_1_3_4_52-ep
+s-converted-to.pdf Heatmap2_1_3_4_52.eps>
+(epstopdf)             \includegraphics on input line 12.
+Package epstopdf Info: Output file is already uptodate.
+
+heatmapTex2_1_3_4.tex:12: Package pdftex.def Error: File `Heatmap2_1_3_4_52-eps
+-converted-to.pdf' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.12 ...ight=.15\linewidth]{Heatmap2_1_3_4_52.eps}
+                                                   & \includegraphics[width=...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `Heatmap2_1_3_4_49.eps' not found on input line 12.
+
+Package epstopdf Info: Source file: <Heatmap2_1_3_4_49.eps>
+(epstopdf)             Output file: <Heatmap2_1_3_4_49-eps-converted-to.pdf>
+(epstopdf)             Command: <miktex-epstopdf --outfile=Heatmap2_1_3_4_49-ep
+s-converted-to.pdf Heatmap2_1_3_4_49.eps>
+(epstopdf)             \includegraphics on input line 12.
+Package epstopdf Info: Output file is already uptodate.
+
+heatmapTex2_1_3_4.tex:12: Package pdftex.def Error: File `Heatmap2_1_3_4_49-eps
+-converted-to.pdf' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.12 ...ight=.15\linewidth]{Heatmap2_1_3_4_49.eps}
+                                                   & \includegraphics[width=...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `Heatmap2_1_3_4_48.eps' not found on input line 12.
+
+Package epstopdf Info: Source file: <Heatmap2_1_3_4_48.eps>
+(epstopdf)             Output file: <Heatmap2_1_3_4_48-eps-converted-to.pdf>
+(epstopdf)             Command: <miktex-epstopdf --outfile=Heatmap2_1_3_4_48-ep
+s-converted-to.pdf Heatmap2_1_3_4_48.eps>
+(epstopdf)             \includegraphics on input line 12.
+Package epstopdf Info: Output file is already uptodate.
+
+heatmapTex2_1_3_4.tex:12: Package pdftex.def Error: File `Heatmap2_1_3_4_48-eps
+-converted-to.pdf' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.12 ...ight=.15\linewidth]{Heatmap2_1_3_4_48.eps}
+                                                   \\
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `Heatmap2_1_3_4_9.eps' not found on input line 13.
+
+Package epstopdf Info: Source file: <Heatmap2_1_3_4_9.eps>
+(epstopdf)             Output file: <Heatmap2_1_3_4_9-eps-converted-to.pdf>
+(epstopdf)             Command: <miktex-epstopdf --outfile=Heatmap2_1_3_4_9-eps
+-converted-to.pdf Heatmap2_1_3_4_9.eps>
+(epstopdf)             \includegraphics on input line 13.
+Package epstopdf Info: Output file is already uptodate.
+
+heatmapTex2_1_3_4.tex:13: Package pdftex.def Error: File `Heatmap2_1_3_4_9-eps-
+converted-to.pdf' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.13 ...eight=.15\linewidth]{Heatmap2_1_3_4_9.eps}
+                                                   & \includegraphics[width=...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `Heatmap2_1_3_4_8.eps' not found on input line 13.
+
+Package epstopdf Info: Source file: <Heatmap2_1_3_4_8.eps>
+(epstopdf)             Output file: <Heatmap2_1_3_4_8-eps-converted-to.pdf>
+(epstopdf)             Command: <miktex-epstopdf --outfile=Heatmap2_1_3_4_8-eps
+-converted-to.pdf Heatmap2_1_3_4_8.eps>
+(epstopdf)             \includegraphics on input line 13.
+Package epstopdf Info: Output file is already uptodate.
+
+heatmapTex2_1_3_4.tex:13: Package pdftex.def Error: File `Heatmap2_1_3_4_8-eps-
+converted-to.pdf' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.13 ...eight=.15\linewidth]{Heatmap2_1_3_4_8.eps}
+                                                   & \includegraphics[width=...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `Heatmap2_1_3_4_5.eps' not found on input line 13.
+
+Package epstopdf Info: Source file: <Heatmap2_1_3_4_5.eps>
+(epstopdf)             Output file: <Heatmap2_1_3_4_5-eps-converted-to.pdf>
+(epstopdf)             Command: <miktex-epstopdf --outfile=Heatmap2_1_3_4_5-eps
+-converted-to.pdf Heatmap2_1_3_4_5.eps>
+(epstopdf)             \includegraphics on input line 13.
+Package epstopdf Info: Output file is already uptodate.
+
+heatmapTex2_1_3_4.tex:13: Package pdftex.def Error: File `Heatmap2_1_3_4_5-eps-
+converted-to.pdf' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.13 ...eight=.15\linewidth]{Heatmap2_1_3_4_5.eps}
+                                                   & \includegraphics[width=...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `Heatmap2_1_3_4_0.eps' not found on input line 13.
+
+Package epstopdf Info: Source file: <Heatmap2_1_3_4_0.eps>
+(epstopdf)             Output file: <Heatmap2_1_3_4_0-eps-converted-to.pdf>
+(epstopdf)             Command: <miktex-epstopdf --outfile=Heatmap2_1_3_4_0-eps
+-converted-to.pdf Heatmap2_1_3_4_0.eps>
+(epstopdf)             \includegraphics on input line 13.
+Package epstopdf Info: Output file is already uptodate.
+
+heatmapTex2_1_3_4.tex:13: Package pdftex.def Error: File `Heatmap2_1_3_4_0-eps-
+converted-to.pdf' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.13 ...eight=.15\linewidth]{Heatmap2_1_3_4_0.eps}
+                                                   & \includegraphics[width=...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `Heatmap2_1_3_4_59.eps' not found on input line 13.
+
+Package epstopdf Info: Source file: <Heatmap2_1_3_4_59.eps>
+(epstopdf)             Output file: <Heatmap2_1_3_4_59-eps-converted-to.pdf>
+(epstopdf)             Command: <miktex-epstopdf --outfile=Heatmap2_1_3_4_59-ep
+s-converted-to.pdf Heatmap2_1_3_4_59.eps>
+(epstopdf)             \includegraphics on input line 13.
+Package epstopdf Info: Output file is already uptodate.
+
+heatmapTex2_1_3_4.tex:13: Package pdftex.def Error: File `Heatmap2_1_3_4_59-eps
+-converted-to.pdf' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.13 ...ight=.15\linewidth]{Heatmap2_1_3_4_59.eps}
+                                                   & \includegraphics[width=...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `Heatmap2_1_3_4_54.eps' not found on input line 13.
+
+Package epstopdf Info: Source file: <Heatmap2_1_3_4_54.eps>
+(epstopdf)             Output file: <Heatmap2_1_3_4_54-eps-converted-to.pdf>
+(epstopdf)             Command: <miktex-epstopdf --outfile=Heatmap2_1_3_4_54-ep
+s-converted-to.pdf Heatmap2_1_3_4_54.eps>
+(epstopdf)             \includegraphics on input line 13.
+Package epstopdf Info: Output file is already uptodate.
+
+heatmapTex2_1_3_4.tex:13: Package pdftex.def Error: File `Heatmap2_1_3_4_54-eps
+-converted-to.pdf' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.13 ...ight=.15\linewidth]{Heatmap2_1_3_4_54.eps}
+                                                   & \includegraphics[width=...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `Heatmap2_1_3_4_51.eps' not found on input line 13.
+
+Package epstopdf Info: Source file: <Heatmap2_1_3_4_51.eps>
+(epstopdf)             Output file: <Heatmap2_1_3_4_51-eps-converted-to.pdf>
+(epstopdf)             Command: <miktex-epstopdf --outfile=Heatmap2_1_3_4_51-ep
+s-converted-to.pdf Heatmap2_1_3_4_51.eps>
+(epstopdf)             \includegraphics on input line 13.
+Package epstopdf Info: Output file is already uptodate.
+
+heatmapTex2_1_3_4.tex:13: Package pdftex.def Error: File `Heatmap2_1_3_4_51-eps
+-converted-to.pdf' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.13 ...ight=.15\linewidth]{Heatmap2_1_3_4_51.eps}
+                                                   & \includegraphics[width=...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `Heatmap2_1_3_4_50.eps' not found on input line 13.
+
+Package epstopdf Info: Source file: <Heatmap2_1_3_4_50.eps>
+(epstopdf)             Output file: <Heatmap2_1_3_4_50-eps-converted-to.pdf>
+(epstopdf)             Command: <miktex-epstopdf --outfile=Heatmap2_1_3_4_50-ep
+s-converted-to.pdf Heatmap2_1_3_4_50.eps>
+(epstopdf)             \includegraphics on input line 13.
+Package epstopdf Info: Output file is already uptodate.
+
+heatmapTex2_1_3_4.tex:13: Package pdftex.def Error: File `Heatmap2_1_3_4_50-eps
+-converted-to.pdf' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.13 ...ight=.15\linewidth]{Heatmap2_1_3_4_50.eps}
+                                                   \\
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `Heatmap2_1_3_4_6.eps' not found on input line 14.
+
+Package epstopdf Info: Source file: <Heatmap2_1_3_4_6.eps>
+(epstopdf)             Output file: <Heatmap2_1_3_4_6-eps-converted-to.pdf>
+(epstopdf)             Command: <miktex-epstopdf --outfile=Heatmap2_1_3_4_6-eps
+-converted-to.pdf Heatmap2_1_3_4_6.eps>
+(epstopdf)             \includegraphics on input line 14.
+Package epstopdf Info: Output file is already uptodate.
+
+heatmapTex2_1_3_4.tex:14: Package pdftex.def Error: File `Heatmap2_1_3_4_6-eps-
+converted-to.pdf' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.14 ...eight=.15\linewidth]{Heatmap2_1_3_4_6.eps}
+                                                   & \includegraphics[width=...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `Heatmap2_1_3_4_4.eps' not found on input line 14.
+
+Package epstopdf Info: Source file: <Heatmap2_1_3_4_4.eps>
+(epstopdf)             Output file: <Heatmap2_1_3_4_4-eps-converted-to.pdf>
+(epstopdf)             Command: <miktex-epstopdf --outfile=Heatmap2_1_3_4_4-eps
+-converted-to.pdf Heatmap2_1_3_4_4.eps>
+(epstopdf)             \includegraphics on input line 14.
+Package epstopdf Info: Output file is already uptodate.
+
+heatmapTex2_1_3_4.tex:14: Package pdftex.def Error: File `Heatmap2_1_3_4_4-eps-
+converted-to.pdf' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.14 ...eight=.15\linewidth]{Heatmap2_1_3_4_4.eps}
+                                                   & \includegraphics[width=...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `Heatmap2_1_3_4_1.eps' not found on input line 14.
+
+Package epstopdf Info: Source file: <Heatmap2_1_3_4_1.eps>
+(epstopdf)             Output file: <Heatmap2_1_3_4_1-eps-converted-to.pdf>
+(epstopdf)             Command: <miktex-epstopdf --outfile=Heatmap2_1_3_4_1-eps
+-converted-to.pdf Heatmap2_1_3_4_1.eps>
+(epstopdf)             \includegraphics on input line 14.
+Package epstopdf Info: Output file is already uptodate.
+
+heatmapTex2_1_3_4.tex:14: Package pdftex.def Error: File `Heatmap2_1_3_4_1-eps-
+converted-to.pdf' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.14 ...eight=.15\linewidth]{Heatmap2_1_3_4_1.eps}
+                                                   & \includegraphics[width=...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `Heatmap2_1_3_4_58.eps' not found on input line 14.
+
+Package epstopdf Info: Source file: <Heatmap2_1_3_4_58.eps>
+(epstopdf)             Output file: <Heatmap2_1_3_4_58-eps-converted-to.pdf>
+(epstopdf)             Command: <miktex-epstopdf --outfile=Heatmap2_1_3_4_58-ep
+s-converted-to.pdf Heatmap2_1_3_4_58.eps>
+(epstopdf)             \includegraphics on input line 14.
+Package epstopdf Info: Output file is already uptodate.
+
+heatmapTex2_1_3_4.tex:14: Package pdftex.def Error: File `Heatmap2_1_3_4_58-eps
+-converted-to.pdf' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.14 ...ight=.15\linewidth]{Heatmap2_1_3_4_58.eps}
+                                                   & \includegraphics[width=...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `Heatmap2_1_3_4_55.eps' not found on input line 14.
+
+Package epstopdf Info: Source file: <Heatmap2_1_3_4_55.eps>
+(epstopdf)             Output file: <Heatmap2_1_3_4_55-eps-converted-to.pdf>
+(epstopdf)             Command: <miktex-epstopdf --outfile=Heatmap2_1_3_4_55-ep
+s-converted-to.pdf Heatmap2_1_3_4_55.eps>
+(epstopdf)             \includegraphics on input line 14.
+Package epstopdf Info: Output file is already uptodate.
+
+heatmapTex2_1_3_4.tex:14: Package pdftex.def Error: File `Heatmap2_1_3_4_55-eps
+-converted-to.pdf' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.14 ...ight=.15\linewidth]{Heatmap2_1_3_4_55.eps}
+                                                   & \includegraphics[width=...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `Heatmap2_1_3_4_53.eps' not found on input line 14.
+
+Package epstopdf Info: Source file: <Heatmap2_1_3_4_53.eps>
+(epstopdf)             Output file: <Heatmap2_1_3_4_53-eps-converted-to.pdf>
+(epstopdf)             Command: <miktex-epstopdf --outfile=Heatmap2_1_3_4_53-ep
+s-converted-to.pdf Heatmap2_1_3_4_53.eps>
+(epstopdf)             \includegraphics on input line 14.
+Package epstopdf Info: Output file is already uptodate.
+
+heatmapTex2_1_3_4.tex:14: Package pdftex.def Error: File `Heatmap2_1_3_4_53-eps
+-converted-to.pdf' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.14 ...ight=.15\linewidth]{Heatmap2_1_3_4_53.eps}
+                                                   &
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[1
+
+{C:/Users/neelm/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
+(heatmapTex2_1_3_4.aux) ) 
+Here is how much of TeX's memory you used:
+ 3720 strings out of 475285
+ 89915 string characters out of 2774119
+ 392712 words of memory out of 3000000
+ 25147 multiletter control sequences out of 15000+600000
+ 469427 words of font info for 29 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 55i,9n,71p,738b,326s stack positions out of 10000i,1000n,20000p,200000b,80000s
+<C:/Users/neelm/AppData/Local/Programs/MiKTeX/fonts/ty
+pe1/public/amsfonts/cm/cmtt10.pfb>
+Output written on heatmapTex2_1_3_4.pdf (1 page, 16651 bytes).
+PDF statistics:
+ 11 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+
